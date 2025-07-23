@@ -5,3 +5,26 @@
   - 20204/09
   - [http://www.egr.unlv.edu/%7Eed/assembly64.pdf](http://www.egr.unlv.edu/%7Eed/assembly64.pdf)
   - Uses YASM
+- Learn Assembly Language with NASM:...
+  - Edward Nyirenda
+  - [Amazon, $39.99](https://www.amazon.com/Learn-Assembly-Language-NASM-Programming/dp/B0D28WTK6Z/ref=sr_1_1?crid=231QSI4WMB8GC&dib=eyJ2IjoiMSJ9.UipX8Z-mJUZTO8r7LStpHUVnV0uGaCPoQBx_uEatEAIlPGxZRhkqlU1IqLu8fTeIvWWuAwJ3D87Ellkbbf1NSfS30Tu8KYM8ROb-b5PIVBaQNlGat54eXevd4vvRuxYQtr11TTgYMblj3nO1Lbr3guR7pvM3j8KmTdLfISwOPabsaLGl5mdY0ZHzGMQrb-bO.4THLBiz-4qkwA8Kn5bsUGos9wnZ9H5llF5TftQPkAkI&dib_tag=se&keywords=nasm+assembly+language+book&qid=1753226919&sprefix=nasm+assembly+language+book%2Caps%2C84&sr=8-1)
+  - ISBN-13 -- 979-8322967880
+  - 2024/04
+  - Windows based
+- THIS IS AN OLD EDITION: Assembly Language Step-by-Step: Programming with Linux, 3rd Edition
+  - Jeff Duntemann
+  - [Amazon, $34.05](https://www.amazon.com/Assembly-Language-Step-Step-Third/dp/0470497025/ref=sr_1_2?crid=231QSI4WMB8GC&dib=eyJ2IjoiMSJ9.UipX8Z-mJUZTO8r7LStpHUVnV0uGaCPoQBx_uEatEAIlPGxZRhkqlU1IqLu8fTeIvWWuAwJ3D87Ellkbbf1NSfS30Tu8KYM8ROb-b5PIVBaQNlGat54eXevd4vvRuxYQtr11TTgYMblj3nO1Lbr3guR7pvM3j8KmTdLfISwOPabsaLGl5mdY0ZHzGMQrb-bO.4THLBiz-4qkwA8Kn5bsUGos9wnZ9H5llF5TftQPkAkI&dib_tag=se&keywords=nasm+assembly+language+book&qid=1753226919&sprefix=nasm+assembly+language+book%2Caps%2C84&sr=8-2)
+- x64 Assembly Language Step-by-Step: Programming with Linux (Tech Today) 4th Edition
+  - Jeff Duntemann
+  - [Amazon, 47.22](https://www.amazon.com/x64-Assembly-Language-Step-Step-dp-1394155247/dp/1394155247/ref=dp_ob_title_bk)
+  - ISBN-13 -- 978-1394155248
+  - Probably a great book, but too cute by half.
+- 64‑Bit Assembly in Practice: Master Low-Level Programming and Performance Optimization on x86-64 Systems (Digital Learning and Tutorials Made Easy for Beginners)
+  - Emrick H. Lowell
+  - [Amazon, $25.99](https://www.amazon.com/64%E2%80%91Bit-Assembly-Practice-Programming-Optimization/dp/B0FH6BNBD3/ref=sr_1_7?dib=eyJ2IjoiMSJ9.UipX8Z-mJUZTO8r7LStpHUVnV0uGaCPoQBx_uEatEAIlPGxZRhkqlU1IqLu8fTeIvWWuAwJ3D87Ellkbbf1NSfS30Tu8KYM8ROb-b5PIVBaQNlGat54eXevd4vvRuxYQtr11TTgYMblj3nO1Lbr3guR7pvM3j8KmTdLfISwOPabsaLGl5mdY0ZHzGMQrb-bO.4THLBiz-4qkwA8Kn5bsUGos9wnZ9H5llF5TftQPkAkI&dib_tag=se&keywords=nasm+assembly+language+book&qid=1753228300&sr=8-7)
+  - Looks like a good technical resource.  Probably not a good textbook.
+- Power of Assembly Language: A Beginner’s Guide to Low-Level Programming and System Architecture for High-Performance Systems 
+  - James Hunter
+  - [Amazon, $28](https://www.amazon.com/Super-Easy-Assembly-Architecture-High-Performance-ebook/dp/B0F6MZ9HJN/ref=tmm_kin_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.UipX8Z-mJUZTO8r7LStpHUVnV0uGaCPoQBx_uEatEAIlPGxZRhkqlU1IqLu8fTeIvWWuAwJ3D87Ellkbbf1NSfS30Tu8KYM8ROb-b5PIVBaQNlGat54eXevd4vvRuxYQtr11TTgYMblj3nO1Lbr3guR7pvM3j8KmTdLfISwOPabsaLGl5mdY0ZHzGMQrb-bO.4THLBiz-4qkwA8Kn5bsUGos9wnZ9H5llF5TftQPkAkI&qid=1753228300&sr=8-12-spons)
+  - 2025/04
+  - ISBN-13 -- 979-8281714303
