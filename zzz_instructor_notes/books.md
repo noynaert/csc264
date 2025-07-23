@@ -28,3 +28,8 @@
   - [Amazon, $28](https://www.amazon.com/Super-Easy-Assembly-Architecture-High-Performance-ebook/dp/B0F6MZ9HJN/ref=tmm_kin_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.UipX8Z-mJUZTO8r7LStpHUVnV0uGaCPoQBx_uEatEAIlPGxZRhkqlU1IqLu8fTeIvWWuAwJ3D87Ellkbbf1NSfS30Tu8KYM8ROb-b5PIVBaQNlGat54eXevd4vvRuxYQtr11TTgYMblj3nO1Lbr3guR7pvM3j8KmTdLfISwOPabsaLGl5mdY0ZHzGMQrb-bO.4THLBiz-4qkwA8Kn5bsUGos9wnZ9H5llF5TftQPkAkI&qid=1753228300&sr=8-12-spons)
   - 2025/04
   - ISBN-13 -- 979-8281714303
+- Learn to Program with Assembly
+  - Jonathan Barlett
+  - Linux, but has docker for mac and windows
+  - ISBN-13 -- 978-1484274361
+  - [Amazon 37.22](https://www.amazon.com/Learn-Program-Assembly-Foundational-Programmers/dp/1484274369/ref=tmm_pap_swatch_0)
