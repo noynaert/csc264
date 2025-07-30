@@ -33,3 +33,9 @@
   - Linux, but has docker for mac and windows
   - ISBN-13 -- 978-1484274361
   - [Amazon 37.22](https://www.amazon.com/Learn-Program-Assembly-Foundational-Programmers/dp/1484274369/ref=tmm_pap_swatch_0)
+
+* X64 Assembly language Step-by-Step:  4th edition
+  - Jeff Duntemann
+  - [PDF Download](https://dokumen.pub/qdownload/x64-assembly-language-step-by-step-programming-with-linux-4nbsped-1394155247-9781394155248-9781394155545-9781394155255.html)
+  - ISBN-13 -- 978-1394155248
+  - [Amazon $56.11](https://www.amazon.com/x64-Assembly-Language-Step-Step/dp/1394155247#:~:text=In%20the%20newly%20revised%20fourth,on%20which%20Linux%20is%20built.)
