@@ -38,7 +38,9 @@ main:
   syscall         # Use system call to exit with error code 7
 ```
 
-# symbols or ; are used to mark comments
+#### Comments
+
+&num; symbols or ; are used to mark comments
 
  There are some directives like the `.globl` and `.section` that control how the assemblers interprets the program.
 
