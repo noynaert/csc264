@@ -4,6 +4,8 @@
 
 ![https://computerscience.gcse.guru](images/Von-Neumann-Architecture-Diagram.png)
 
+This is also a pretty good diagram of this course; we will be focused almost exclusively on the CPU and its communication with memory.  We will have very limited concern with Input and Output.
+
 ## CPU
 
 ![https://commons.wikimedia.org/wiki/File:Cpu_1.jpg](images/Cpu_1.jpg)
@@ -14,14 +16,14 @@
 
 ## Memory Unit
 
-Memory is also known as RAM.  
+Memory is also known as RAM or "Primary Storage."  
 
 Memory is organized by addresses.
 
 ## Buses
 
-A Buss is a connection path between parts of the computer.  There is usually an Address Bus and a Data Bus between the CPU and the Memory Unit.
+A Bus is a connection path between parts of the computer.  There is usually an Address Bus and a Data Bus between the CPU and the Memory Unit.
 
 ## Input/Output
 
-Different types of VonNeumann computers handle I/O differently.  Sometimes they have their own busses, but some systems just treat I/O as if they are special memory addresses
+Different types of VonNeumann computers handle I/O differently.  Sometimes they have their own busses, but some systems just treat I/O as if they are special memory addresses.
