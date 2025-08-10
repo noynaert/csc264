@@ -4,3 +4,10 @@
 # Temporary files
 *.tmp
 tmp/*
+
+# assembler and linker output
+a.out
+*.o
+*.obj
+*.class
+*.exe
