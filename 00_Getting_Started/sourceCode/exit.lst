@@ -1,0 +1,12 @@
+GAS LISTING exit.s 			page 1
+
+
+   1              	.section .data
+   2              	.section .text
+   3              	.globl _start
+   4              	_start:
+   5 0000 B8010000 	    movl $1, %eax
+   5      00
+   6 0005 BB070000 	    movl $7, %ebx
+   6      00
+   7 000a CD80     	    int $0x80
