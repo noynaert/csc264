@@ -9,7 +9,7 @@ Assembly is a hard if you are not comfortable working in Binary, Hex, and Decima
 
 ## Structure of the assembly language statement
 
-There are two different forms of assembly language.  
+There are two different "Dialects" of assembly language.  
 
 * AT&T or GAS assemblers
 * Intel assemblers
