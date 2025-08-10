@@ -1,4 +1,4 @@
-# 01.010 About this course
+# 00.010 About this course
 
 The course title is Assembly Language and Computer Architecture.  We will study both, but the real intent of the course is not to make you expert Assembly Language programmers.  The purpose is to give you understanding and tools to be a well-rounded IT professional.
 
