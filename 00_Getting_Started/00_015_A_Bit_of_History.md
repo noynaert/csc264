@@ -6,7 +6,9 @@ In this vide we are going to look at history, and also talk about what a "bit" i
 
 ![https://www.smithsonianmag.com/smithsonian-institution/herman-holleriths-tabulating-machine-2504989/](images/hollerith_census_machinechm.webp)
 
-![https://www.si.edu/object/punch-cards-made-us-census-population-1930:nmah_1848441](images/Cpu_1.jpg)
+![https://www.smithsonianmag.com/smithsonian-institution/herman-holleriths-tabulating-machine-2504989/](images/NMAH-AHB2017q017825.jpg)
+
+
 
 Notice that the holes are a binary representation.  There is a hole, or there is not a hole.
 
