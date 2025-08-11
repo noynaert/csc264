@@ -2,6 +2,15 @@
 
 ## Von Neuman Architecture
 
+* Has a CPU containing
+  * Control Unit
+  * ALU (Arithmetic/Logic Unit)
+  * Registers
+* Uses binary arithmetic rather than BCD
+* Primary Storage/Main Memory contains two things
+  * Program instructions
+  * Data
+
 ![https://computerscience.gcse.guru](images/Von-Neumann-Architecture-Diagram.png)
 
 This is also a pretty good diagram of this course; we will be focused almost exclusively on the CPU and its communication with memory.  We will have very limited concern with Input and Output.
