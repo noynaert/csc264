@@ -26,12 +26,12 @@ Binary<br>Representation|Decimal<br>Digit
 0111|7
 1000|8
 1001|9
-1010|10
 
 ### Unused or wasted BCD "bit space"
 
 Binary<br>Representation|Decimal<br>Digit
 :---:|:---:
+1010| ???
 1011| ???
 1100| ???
 1101| ???
