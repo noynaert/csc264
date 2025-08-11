@@ -8,7 +8,8 @@ GAS LISTING hello.s 			page 1
    4      6F2C2057 
    4      6F726C64 
    4      210A
-   5              	len = 14
+   5 ???? 00000000 	len:  .quad  $14
+   5      00000000 
    6              	
    7              	.section .text
    8              	_start:
@@ -19,7 +20,7 @@ GAS LISTING hello.s 			page 1
   11      000000
   12 ???? 488D3425 	    lea message, %rsi    # Address of the message string
   12      00000000 
-  13 ???? 48C7C20E 	    movq $len, %rdx      # Length of the message
+  13 ???? 48C7C200 	    movq $len, %rdx      # Length of the message
   13      000000
   14 ???? 0F05     	    syscall              # Execute the system call
   15              	

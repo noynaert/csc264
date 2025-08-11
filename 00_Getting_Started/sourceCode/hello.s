@@ -2,7 +2,7 @@
 
 .section .data
 message: .ascii "Hello, World!\n"
-len = 14
+len:  .quad  $14
 
 .section .text
 _start:
