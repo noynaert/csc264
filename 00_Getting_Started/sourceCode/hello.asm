@@ -2,11 +2,10 @@
 
 .section .data
 message: .ascii "Hello, World!\n"
-len =  14
+len = 14
 
 .section .text
 main:
-    movq %rsp, %rbp #for correct debugging
     # set up for sending message to STDOUT 
     movq $1, %rax        # System call number for sys_write
     movq $1, %rdi        # File descriptor for STDOUT

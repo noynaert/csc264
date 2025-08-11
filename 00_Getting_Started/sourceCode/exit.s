@@ -1,7 +1,9 @@
+# This program just exits with a return code
+
 .section .data
 .section .text
 .globl _start
 _start:
-    movl $1, %eax
-    movl $7, %ebx
-    int $0x80
+    movq $60, %rax   #System call for exit
+    movq $7, %rdi    #The return code
+    syscall

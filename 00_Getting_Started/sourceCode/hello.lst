@@ -1,32 +1,32 @@
 GAS LISTING hello.s 			page 1
 
 
-   1              	.global _start
+   1              	.global _start: 
    2              	
    3              	.section .data
-   4 0000 48656C6C 	message: .ascii "Hello, World!\n"
+   4 ???? 48656C6C 	message: .ascii "Hello, World!\n"
    4      6F2C2057 
    4      6F726C64 
    4      210A
-   5              	.set len, (. - message)
+   5              	len = 14
    6              	
    7              	.section .text
    8              	_start:
    9              	    # set up for sending message to STDOUT 
-  10 0000 48C7C001 	    movq $1, %rax        # System call number for sys_write
+  10 ???? 48C7C001 	    movq $1, %rax        # System call number for sys_write
   10      000000
-  11 0007 48C7C701 	    movq $1, %rdi        # File descriptor for STDOUT
+  11 ???? 48C7C701 	    movq $1, %rdi        # File descriptor for STDOUT
   11      000000
-  12 000e 488D3425 	    lea message, %rsi    # Address of the message string
+  12 ???? 488D3425 	    lea message, %rsi    # Address of the message string
   12      00000000 
-  13 0016 48C7C20E 	    movq $len, %rdx      # Length of the message
+  13 ???? 48C7C20E 	    movq $len, %rdx      # Length of the message
   13      000000
-  14 001d 0F05     	    syscall              # Execute the system call
+  14 ???? 0F05     	    syscall              # Execute the system call
   15              	
   16              	    # sys_exit(status=0)
-  17 001f 48C7C03C 	    movq $60, %rax       # System call number for sys_exit
+  17 ???? 48C7C03C 	    movq $60, %rax       # System call number for sys_exit
   17      000000
-  18 0026 48C7C700 	    movq $0, %rdi        # Exit status 0 (success)
+  18 ???? 48C7C700 	    movq $0, %rdi        # Exit status 0 (success)
   18      000000
-  19 002d 0F05     	    syscall              # Execute the system call
+  19 ???? 0F05     	    syscall              # Execute the system call
   20              	

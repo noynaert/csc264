@@ -1,12 +1,14 @@
 GAS LISTING exit.s 			page 1
 
 
-   1              	.section .data
-   2              	.section .text
-   3              	.globl _start
-   4              	_start:
-   5 0000 B8010000 	    movl $1, %eax
-   5      00
-   6 0005 BB070000 	    movl $7, %ebx
-   6      00
-   7 000a CD80     	    int $0x80
+   1              	# This program just exits with a return code
+   2              	
+   3              	.section .data
+   4              	.section .text
+   5              	.globl _start
+   6              	_start:
+   7 0000 48C7C03C 	    movq $60, %rax   #System call for exit
+   7      000000
+   8 0007 48C7C707 	    movq $7, %rdi    #The return code
+   8      000000
+   9 000e 0F05     	    syscall

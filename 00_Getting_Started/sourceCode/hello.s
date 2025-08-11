@@ -1,8 +1,8 @@
-.global _start
+.global _start: 
 
 .section .data
 message: .ascii "Hello, World!\n"
-.set len, (. - message)
+len = 14
 
 .section .text
 _start:
