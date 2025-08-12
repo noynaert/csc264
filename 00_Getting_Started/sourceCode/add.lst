@@ -1,0 +1,30 @@
+GAS LISTING add.s 			page 1
+
+
+   1              	#This program adds two integers and returns the sum to the operating system.
+   2              	
+   3              	.globl _start
+   4              	
+   5              	.data
+   6 0000 0A000000 	  num1: .quad 10
+   6      00000000 
+   7 0008 0F000000 	  num2: .quad 15
+   7      00000000 
+   8 0010 00000000 	  sum:  .quad 0
+   8      00000000 
+   9              	
+  10              	.text
+  11              	_start:
+  12 0000 488B0425 	  movq num1, %rax # Moves data from num1 into the rax register
+  12      00000000 
+  13 0008 48030425 	  addq num2, %rax # Adds data from num2 to the rax register
+  13      00000000 
+  14 0010 48890425 	  movq %rax, sum  # Moves the contents of rax to sum
+  14      00000000 
+  15              	
+  16              	  # exit the program
+  17 0018 48C7C03C 	  mov $60,  %rax  # instruction to exit for use by syscall
+  17      000000
+  18 001f 488B3C25 	  movq sum, %rdi  # The value syscall will return to the operating system
+  18      00000000 
+  19 0027 0F05     	  syscall
