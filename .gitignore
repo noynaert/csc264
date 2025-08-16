@@ -11,3 +11,22 @@ a.out
 *.obj
 *.class
 *.exe
+
+
+# Latex extra files
+*.aux
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cbl
+*.cb2
+*.idx
+*.ilg
+*.ind
+*.bbl
+*.blg
+*.brf

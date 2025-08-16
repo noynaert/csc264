@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1754755702.38573 "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" "unit00.pdf" "unit00" 1754755702.83973 2
-  "../duke.png" 1754754849.98856 114401 60b917cf02636327b90d1612d38c1f7c ""
-  "../videoNotes.sty" 1754754924.33355 1156 f3db4cd270bb6371bf4fefe0fadac22b ""
-  "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" 1754755701.75036 1496 284cab6bb3cc4c3644ce8b4a44ee70e9 ""
+["pdflatex"] 1755384924.50843 "/home/noynaert/classes/264/csc264/videoNotes/unit00/unit00.tex" "unit00.pdf" "unit00" 1755384925.72581 2
+  "../duke.png" 1755361271.68555 114401 60b917cf02636327b90d1612d38c1f7c ""
+  "../videoNotes.sty" 1755361271.68755 1156 f3db4cd270bb6371bf4fefe0fadac22b ""
+  "/home/noynaert/classes/264/csc264/videoNotes/unit00/unit00.tex" 1755384922.54527 1496 284fb11965b1374217c02a784d5086bb ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/gentium-tug/gentium-ec.enc" 1373051898 2297 8ecb64ef8bc0f64cef104cc9ba7e4515 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -107,10 +107,11 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1754750177.00306 4547823 614eba97e0451aad345770236b030e55 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1754749974 7759954 427b445e4d35f3246e8df9bff0337788 ""
-  "unit00.aux" 1754755702.77238 1336 679dd7a49998b079886971e3512218b5 "pdflatex"
-  "unit00.out" 1754755702.56337 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1755362158.20744 4602002 62dba5fc29055c16380d7393a2adb07a ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1755361735 7753796 93941aed3ff46a83995a5486e08a1b1f ""
+  "unit00.aux" 1755384925.54824 1336 0a825631ce27e738c9f7860e8a1f27f7 "pdflatex"
+  "unit00.out" 1755384925.03525 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "unit00.tex" 1755384922.54527 1496 284fb11965b1374217c02a784d5086bb ""
   (generated)
   "unit00.aux"
   "unit00.log"
