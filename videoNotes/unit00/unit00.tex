@@ -202,13 +202,55 @@ ar
     \vspace{15mm}
 \end{samepage}
 \par
- 
- 
 
 \rule{0.5\textwidth}{.4pt} %End of section
 
+\section*{\unit\_040 -- Machine Language}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 5:40}}
+\begin{samepage}
+    \question The assembly language program translates assembly language into \rule{3cm}{0.15mm} language.
+    \vspace{5mm}
+\end{samepage}
+\par
 
+NOTE:  (Not a question).  The program I wrote for the first video is in 64-bit assembler.  When i made this 040 video, I wanted the machine code to be neat in the listing.  I did not like how every line of machine code in 64-bit assembly takes two lines, with the second line being 000000000.  So I sort of cheated and wrote this program using only 16-bit assembler.  In the first program, I used the %rax register.  The "r" indicates it is 64-bit.  In the code I wrote for the 040 video, I used the %ax register, which is the 
+lower 16 bits of the %rax register.  The program still works fine on a 64-bit CPU, but it looks nicer when I make a listing.  
 
+\begin{samepage}
+    \question What is the relationship between hexadecimal and binary?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question In the 000 video, I had the following line of code:
+
+     \begin{verbatim}
+      movq sum, %rdi       
+     \end{verbatim}
+     In this video, I wrote the equivalent line of code as:
+     \begin{verbatim}
+        mov $7, %di
+        \end{verbatim}
+        Explain the differences between these two lines of code.
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_050 -- Computer Languages}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 5:28}}
+\begin{samepage}
+    \question How are high-level languages different from low-level languages?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question The PDP-11 had a row of switches.  What did each switch represent?
+    \vspace{5mm}
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
 %----------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
