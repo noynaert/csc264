@@ -773,6 +773,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/tex-gyre/ec-qzcmi.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1728.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -801,9 +806,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/gentium-tug/gentium-ec.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
+INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT unit00.aux
 INPUT ./unit00.out
 INPUT ./unit00.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/gentium-tug/GentiumPlus-Bold.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/gentium-tug/GentiumPlus-Regular.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1728.pfb

@@ -1,11 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1755568931.18498 "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" "unit00.pdf" "unit00" 1755568932.27107 0
+["pdflatex"] 1755825660.95262 "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" "unit00.pdf" "unit00" 1755825661.90606 0
   "../videoNotes.sty" 1755361271.68755 1156 f3db4cd270bb6371bf4fefe0fadac22b ""
-  "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" 1755568930.71891 933 d91ea30da2524aee6ecf2238c0086145 ""
+  "/home/noynaert/264/csc264/videoNotes/unit00/unit00.tex" 1755825660.51581 5103 e90c9c99e176f267af1c7aa125485e31 ""
+  "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/gentium-tug/gentium-ec.enc" 1373051898 2297 8ecb64ef8bc0f64cef104cc9ba7e4515 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc" 1529098226 2457 aaabbccba4df2a7f7371410ee4e075a3 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1728.tfm" 1136768653 1536 fe3e6aedda6bc9959294574e5233f476 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -26,6 +28,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/gentium-tug/ec-gentiumplus-regular.tfm" 1653250954 7652 5a49fa1b278a1a956ffe34e771330d8b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/tex-gyre/ec-qbkr.tfm" 1254269485 12684 9e5632fd5b59029e95cdc389d02ad2c1 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/tex-gyre/ec-qzcmi.tfm" 1254269485 8216 7a7dd9b8bf36ec00705ba22963899aae ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1728.pfb" 1215737283 173249 d3d5586126474b69a94ef51a3e35a603 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/gentium-tug/GentiumPlus-Bold.pfb" 1653250954 876858 366b3e43bdbe86f0cc56f61dffe38f1e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/gentium-tug/GentiumPlus-Regular.pfb" 1653250954 843063 87e8ae48a5a050c137f523ff2ec70707 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb" 1254269485 102563 dd031027bdbafb7c6cf978360c6eff35 ""
@@ -74,6 +77,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1737590400 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty" 1737590400 5048 84b05796b49b69e2d4257d537721c960 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo" 1737590400 8449 c314623021fbddd0180c05345324933c ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd" 1737590400 2443 f9c272838e65ac147422f32fe87b76a1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty" 1666037909 9124 59c3b56f1a073de66e3eea35f9c173c8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/exam/exam.cls" 1614638284 286382 b210b790c86d89aeccb508074bd001ae ""
@@ -113,8 +117,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1755362158.20744 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1755361735 7753796 93941aed3ff46a83995a5486e08a1b1f ""
-  "unit00.aux" 1755568932.08081 1147 a5157f869ad4ec0f874d953954a70669 "pdflatex"
-  "unit00.out" 1755568931.92385 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "unit00.aux" 1755825661.71641 5126 6cd8d318b9a030849f6d235405b9bcee "pdflatex"
+  "unit00.out" 1755825661.56741 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "unit00.aux"
   "unit00.log"
