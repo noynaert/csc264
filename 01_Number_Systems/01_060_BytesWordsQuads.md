@@ -23,7 +23,7 @@ $2^7 = 128$  Seven bit systems can have upper and lower case, with some space to
 
 Six and Seven bit computers used octal (base 8) for shorthand instead of hex because $2^3 = 8$.  
 
-<img align="right" width=400 src="../00_Getting_Started/images/DEC_PDP-11_20_computer_at_the_Computer_History_Museum.jpg">
+<img align="right" width=600 src="../00_Getting_Started/images/DEC_PDP-11_20_computer_at_the_Computer_History_Museum.jpg">
 
 Octal|Binary
 ---|---
@@ -36,6 +36,17 @@ Octal|Binary
 6|110
 7|111
 
+# Parity bits
+
+Parity bits were mainly used to detect errors in transmission.  7-bit ascii allowed for a parity bit.
+
+The sender and receiver would agree to use either "even parity" or "odd parity."
+
+Let's say they agreed on "odd parity."  The sender would add 1 extra bit.  If there were an an odd number of bits set to 1 in the data bits, the parity bit would be set to 0.  If there were an even number of 1s in the data, then the sender would append a 1
+
+The receiver would have a circuit that counted the number of bits set to 1 in each group of 8.  It would signal a communication error if it got an even number of bits set.
+
+## ASCII
 
 ![https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg](images/Ascii.png)
 
