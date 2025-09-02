@@ -1,4 +1,4 @@
-# 01.050 Bit Space
+# 01.060 Bit Space
 
 ## Communicating with switches
 
