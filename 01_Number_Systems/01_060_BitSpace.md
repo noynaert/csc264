@@ -47,6 +47,6 @@ Bit space refers to the number of combinations we have for a given number of bit
 
 For example, 8-bit graphics can have 256 colors because $2^8 = 256$.  Or it can have 127 colors and 127 blinking colors.  That only sums to 254.  The other two colors are 0 for black and 255 for "blinking black" but blinking black and black are the same in practice.
 
-There were 20 address lines on an 8086 processor, so it could access $2^20$ memory locations, or 1 megabyte.
+There were 20 address lines on an 8086 processor, so it could access $2^{20}$ memory locations, or 1 megabyte.
 
-However, there were only 16 bits in the registers, so the biggest address the registers could hold was $2^16$ or 640K (65,536).  This was one of the things that made memory addressing so tricky on 8086 processors
+However, there were only 16 bits in the registers, so the biggest address the registers could hold was $2^{16}$ or 640K (65,536).  This was one of the things that made memory addressing so tricky on 8086 processors

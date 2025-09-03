@@ -8,7 +8,7 @@ Byte size is determined by how many bits are needed to hold 1 alphabetic charact
 
 ## Byte Size
 
-Historically, there were 6 and 7 byte computer systems.
+Historically, there were 6 and 7 bit computer systems.
 
 Consider how many bits are needed to have alphabetic characters in English on a 6-bit computer
 
