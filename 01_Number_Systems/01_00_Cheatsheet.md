@@ -12,4 +12,4 @@ On the exam, I will give you the 16 multiplication table.  The table that involv
 
 I will provide the table that shows the multiplication table for 16.
 
-[Link to the cheatsheet](..\videoNotes/unit01/cheatsheet.pdf)
+[Link to the cheatsheet](https://github.com/noynaert/csc264/blob/main/videoNotes/unit01/cheatsheet.pdf)
