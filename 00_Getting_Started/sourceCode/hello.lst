@@ -18,16 +18,16 @@ GAS LISTING hello.s 			page 1
   10      000000
   11 0007 48C7C701 	    movq $1, %rdi        # File descriptor for STDOUT
   11      000000
-  12 000e 488B3425 	    movq len, %rsi    # Address of the message string
+  12 000e 488D3425 	    lea message, %rsi    # Address of the message string
   12      00000000 
-  13 0016 48C7C200 	    movq $len, %rdx      # Length of the message
-  13      000000
-  14 001d 0F05     	    syscall              # Execute the system call
+  13 0016 488B1425 	    movq len, %rdx      # Length of the message
+  13      00000000 
+  14 001e 0F05     	    syscall              # Execute the system call
   15              	
   16              	    # sys_exit(status=0)
-  17 001f 48C7C03C 	    movq $60, %rax       # System call number for sys_exit
+  17 0020 48C7C03C 	    movq $60, %rax       # System call number for sys_exit
   17      000000
-  18 0026 48C7C700 	    movq $0, %rdi        # Exit status 0 (success)
+  18 0027 48C7C700 	    movq $0, %rdi        # Exit status 0 (success)
   18      000000
-  19 002d 0F05     	    syscall              # Execute the system call
+  19 002e 0F05     	    syscall              # Execute the system call
   20              	
