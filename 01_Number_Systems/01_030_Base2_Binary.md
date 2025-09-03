@@ -83,3 +83,5 @@ For example:
 0b0111  is 4+2+1 or seven.
 0b01000001 is 64+1 or 65.
 ```
+
+![Base 2](images/base2_annotated.png)

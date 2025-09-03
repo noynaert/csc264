@@ -60,5 +60,5 @@ $16^3$|$16^2$|$16^1$|$16^0$
    0x12b3 = 4781
 ```
 
-
-```
+![Base 16](images/base16_annotated-1.png)
+![Base 16-2](images/base16_annotated-2.png)

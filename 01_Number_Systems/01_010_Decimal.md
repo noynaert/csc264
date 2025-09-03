@@ -32,4 +32,5 @@ $10^3$ | $10^2$|$10^1$|$10^0$
 * $a^1 = 1 \cdot a$
 * $a^0 = 1$
 
-
+![Decimal worksheet](images/base10_annotated-1.png)
+![Decimal worksheet2](images/base10_annotated-2.png)
