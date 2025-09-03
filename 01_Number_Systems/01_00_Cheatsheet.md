@@ -1,4 +1,6 @@
-#01.Cheatsheet
+# 01.000 Cheatsheet
+
+Calculators will not be allowed on the exam.
 
 # Expected arithmetic
 
