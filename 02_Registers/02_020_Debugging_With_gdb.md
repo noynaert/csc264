@@ -5,11 +5,6 @@ I don't like discussing registers in the abstract.  We are going to use debuggin
 
 Also, this lets us cover debugging in small pieces rather than all at once.
 
-## About `gdb`
-
-The `gdb` program is actually designed for use with GNU C/C++.  We are hijacking it for use with assembler.
-
-
 ## Assemble with Debug Info
 
 Use the `-g` flag to include debug information:

@@ -1,6 +1,6 @@
-# 02.010 Recap about Registers
+# 02.040 Recap about Registers
 
-## Textbook -- Chapters 4 (first part), Appendix C
+## Textbook -- Chapters 4 (first part)
 
 
 ## Recap

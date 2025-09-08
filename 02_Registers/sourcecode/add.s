@@ -21,9 +21,8 @@ _start:
   addq num2, %rax   # add the value stored in num2 to the value alread in the rax register.
   movq %rax, sum    # moves the contents of the rax register into sum
 
-_exit:
   # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
   movq $60, %rax
   movq sum, %rdi
-_done:
+
   syscall
