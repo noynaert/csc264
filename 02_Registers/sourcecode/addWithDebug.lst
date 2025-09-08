@@ -1,0 +1,40 @@
+GAS LISTING addWithDebug.s 			page 1
+
+
+   1              	/*
+   2              	
+   3              	Classic add.s program with debugging labels added
+   4              	
+   5              	file: addWithDebug.s
+   6              	
+   7              	*/
+   8              	
+   9              	.globl _start
+  10              	
+  11              	.data
+  12 0000 41000000 	  num1: .quad 65  # Would be an ACCII 'A'
+  12      00000000 
+  13 0008 05000000 	  num2: .quad 5
+  13      00000000 
+  14 0010 00000000 	  sum:  .quad 0
+  14      00000000 
+  15              	
+  16              	.text
+  17              	_start:
+  18              	
+  19              	  # add two quad integers and store the result in sum  sum = num1 + num2
+  20 0000 488B0425 	  movq num1, %rax   # move the value stored in num1 into the rax register
+  20      00000000 
+  21 0008 48030425 	  addq num2, %rax   # add the value stored in num2 to the value alread in the rax register.
+  21      00000000 
+  22 0010 48890425 	  movq %rax, sum    # moves the contents of the rax register into sum
+  22      00000000 
+  23              	
+  24              	_exit:
+  25              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  26 0018 48C7C03C 	  movq $60, %rax
+  26      000000
+  27 001f 488B3C25 	  movq sum, %rdi
+  27      00000000 
+  28              	_done:
+  29 0027 0F05     	  syscall
