@@ -1,0 +1,28 @@
+# 02.0x0 `mov`
+
+The `mov` command is the most used command.
+
+## Source Destination
+
+The `mov` command **_copies_** from the source operand to the destination. The source remains unchanged (It does not move)
+
+`mov` can move data between registers.
+
+`mov` can move data between a register and memory
+
+The source and destination **_cannot_** both be memory locations.
+
+`mov` cannot move 64 bit values directly to memory.
+
+## Sizes
+
+Sometimes the `mov` command can figure out how many bytes should be moved.  In those cases, you may use simple `mov`
+
+However, sometimes the number of bytes is harder to determine.  There are specific versions of `mov` that specify the size:
+
+* `movb`: Move byte (1 byte).
+* `movw`: Move word (2 bytes).
+* `movl`: Move doubleword (4 bytes).
+* `movq`: Move quadword (8 bytes). 
+
+It can be good style to use the sized versions, even when just `mov` would work.  In this class, we will use this convention.

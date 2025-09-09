@@ -31,6 +31,8 @@ Most people are running VMs or WSL.  We may need to work together to find option
 
 If kgdb does not work for you in Kali, I suggest that you install a 2nd copy of Kali.  Do not do an "unattended install."  If you do a regular install, Kali will give you the option to use the KDE Plasma desktop.
 
+Chose the `SDDM` desktop manager when you are asked to chose.
+
 ### Virtual Machine + Ubuntu
 
 Ubuntu has a spin called Kubuntu that uses the KDE Plasma desktop.  However, there is a system update happening in October, and I had a bad experience after the update.  The update replace Plasma with Gnome.  
