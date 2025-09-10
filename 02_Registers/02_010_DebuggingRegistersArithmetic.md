@@ -7,3 +7,7 @@ Debugging itself is a useful and necessary skill.  We will also use it to examin
 We will be using the gdb debugger.  The gdb program is a terminal-based debugger  It is part of the gnu C/C++ compiler package.  The gdb program is designed for C, so it may look odd at times.
 
 I will also be using the kgdb program, which is a KDE graphical frontend for kdbg.
+
+## Arithmetic
+
+The book does a very small and inadequate treatment of arithmetic.  We will do arithmetic next week.

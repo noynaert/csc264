@@ -1,0 +1,36 @@
+GAS LISTING eax.s 			page 1
+
+
+   1              	/*
+   2              	
+   3              	Deomstrates the transfer of the Least Significant Bits (LSB) in
+                     transfers
+   4              	
+   5              	file: eax.s
+   6              	
+   7              	*/
+   8              	
+   9              	.globl _start
+  10              	
+  11              	.data
+  12 0000 10325476 	  num1: .quad 0xfedcba9876543210  # A big number filling the bits
+  12      98BADCFE 
+  13 0008 0000     	  result:.word 0
+  14              	
+  15              	.text
+  16              	_start:
+  17              	
+  18              	  # add two quad integers and store the result in sum  sum = num1 + num2
+  19 0000 488B0425 	  movQ num1, %rax   # move the value stored in num1 into the rax register
+  19      00000000 
+  20 0008 89C3     	  mov  %eax, %ebx   # move 8 LSB to the ebx
+  21 000a 891C2500 	  mov  %ebx, result  # send ebx to memory
+  21      000000
+  22              	_exit:
+  23              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  24 0011 48C7C03C 	  movq $60, %rax
+  24      000000
+  25 0018 488B3C25 	  mov result, %rdi
+  25      00000000 
+  26              	
+  27 0020 0F05     	  syscall
