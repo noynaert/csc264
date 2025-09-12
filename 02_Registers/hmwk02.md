@@ -70,7 +70,7 @@ bits|.data<br>declaration|mov|original<br>registers|extra<br>8 registers
 
 ## Grading
 
-Submitting the code will be worth 5 points.  Code review will be work 5 points.  
+Submitting the code will be worth 5 points.  Code review will be worth 5 points.  
 
 Turn in your homework by the due date.  Just upload the hmwk02.s file. 
 
