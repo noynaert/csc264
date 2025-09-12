@@ -2,7 +2,10 @@
 
 
 
-Side notes  The Register map shown at right is now an official part of the cheatsheet for the first exam. It will also be useful on this assignment.
+## Side notes  
+
+* The Register map shown at right is now an official part of the cheatsheet for the first exam. It will also be useful on this assignment.
+* I made a video about [clearing registers](https://mwsu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=435a65e4-6807-431c-97f0-b35600602801)  I also step through the program in both the kdbg and the gdg debuggers.
 
 <img src="images/X86_64-GP-registers.png" align="right" >
 
