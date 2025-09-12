@@ -1,0 +1,37 @@
+GAS LISTING clearRegister.s 			page 1
+
+
+   1              	/*
+   2              	
+   3              	Clears the MSB of a register
+   4              	
+   5              	file: clearRegisters.s
+   6              	
+   7              	*/
+   8              	
+   9              	.globl _start
+  10              	
+  11              	.data
+  12              	  initials:
+  13 0000 78563412 	  trash: .long 0x12345678
+  14 0004 0A00     	  small: .word 0x000A
+  15 0006 00000000 	  result:.long 0
+  16              	.text
+  17              	_start:
+  18              	  #Add junk to the full rdiregister
+  19 0000 8B1C2500 	  movl trash, %ebx
+  19      000000
+  20 0007 48C7C300 	  movq $0, %rbx
+  20      000000
+  21 000e 668B1C25 	  movw small, %bx
+  21      00000000 
+  22 0016 891C2500 	  movl %ebx,  result
+  22      000000
+  23              	_exit:
+  24              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  25 001d 48C7C03C 	  movq $60, %rax
+  25      000000
+  26 0024 488B3C25 	  movq result, %rdi
+  26      00000000 
+  27              	
+  28 002c 0F05     	  syscall
