@@ -9,6 +9,7 @@ Consider adding two binary digits.  There are 4 possible combinations of 2 digit
 
 The 1+1 produces a "Carry out"
 
+![Bitwise additon](images/bitwiseAddition.png)
 
 ## Half-Adder
 
