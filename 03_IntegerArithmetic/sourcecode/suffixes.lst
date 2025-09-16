@@ -1,0 +1,38 @@
+GAS LISTING suffixes.s 			page 1
+
+
+   1              	
+   2              	/* Exploring suffixes with mov
+   3              	   file: suffixes.s
+   4              	   Assemble with GAS assembler
+   5              	 */
+   6              	
+   7              	.globl _start
+   8              	.data
+   9 0000 FFFFFFFF 	  num1:    .quad 0x7fffffffffffffff
+   9      FFFFFF7F 
+  10              	
+  11              	.text
+  12              	_start:
+  13              	    # fill registers with markers
+  14 0000 488B0425 	    movq num1, %rax
+  14      00000000 
+  15 0008 4889C3   	    movq %rax, %rbx
+  16 000b 4889C1   	    movq %rax, %rcx
+  17 000e 4889C2   	    movq %rax, %rdx
+  18              	
+  19              	_break0:
+  20 0011 48C7C000 	   movq $0, %rax
+  20      000000
+  21 0018 BB000000 	   movl $0, %ebx
+  21      00
+  22 001d 66B90000 	   movw $0, %cx
+  23 0021 B200     	   movb $0, %dl
+  24              	
+  25              	_exit:
+  26              	    #Exit the program, returning the sum
+  27 0023 48C7C03C 	    movq $60, %rax
+  27      000000
+  28 002a 48C7C700 	    movq $0,   %rdi
+  28      000000
+  29 0031 0F05     	    syscall

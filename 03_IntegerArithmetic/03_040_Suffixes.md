@@ -2,20 +2,22 @@
 
 Most arithmetic operations must specify how many bytes they are operating on.  Like the `mov` command, suffixes indicate the size
 
-bytes|meaning|suffix|Example<br>register references
+bits|meaning|suffix|Example<br>register references
 :---:|:---:|:---:|:---:
-8|quad|q|rdx,rdi,r9
-4|long|l|edx,edi,r9d
-2|word|w|ax,di,r9w
-1|byte|b|al, ah,dil,rhb
+64|quad|q|rax,rdi,r9
+32|long|l|eax,edi,r9d
+16|word|w|ax,di,r9w
+8|byte|b|al, ah,dil,rhb
 
 Operations on bytes and words only cover the lower 8 and 16 bits.  Operations on 32 or 64 bits will almost always clear the upper 32 bits.
 
 ## Example of suffixes with `mov`
 
 ```gas
-
-/* Clearing registers with mov and xor */
+* Exploring suffixes with mov
+   file: suffixes.s
+   Assemble with GAS assembler
+ */
 
 .globl _start
 .data
@@ -23,25 +25,17 @@ Operations on bytes and words only cover the lower 8 and 16 bits.  Operations on
 
 .text
 _start:
-  .globl _start
-.data
-  num1:    .quad 0x7fffffffffffffff
-
-.text
-_start:
     # fill registers with markers
     movq num1, %rax
-    movq num1, %rbx
-    movq num1, %rcx
-    movq num1, %rdx
+    movq %rax, %rbx
+    movq %rax, %rcx
+    movq %rax, %rdx
 
-   # Clearing with mov and suffixes
-   #  Also, demonstrate movq $0 is a large instruction
-    movq $0, %rax
-    movl $0, %ebx
-    movw $0, %cx
-    movb $0, %dh
-    movb $0, %dl
+_break0:
+   movq $0, %rax
+   movl $0, %ebx
+   movw $0, %cx
+   movb $0, %dl
 ```
 
 ![debugging output](images/suffixes.png)
