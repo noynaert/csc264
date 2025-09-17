@@ -9,9 +9,9 @@ GAS LISTING sub.s 			page 1
    6              	
    7              	.globl _start
    8              	.data
-   9 0000 0E000000 	  num1: .quad 14
+   9 0000 C8000000 	  num1: .quad 200
    9      00000000 
-  10 0008 06000000 	  num2: .quad  6
+  10 0008 17000000 	  num2: .quad  23
   10      00000000 
   11 0010 00000000 	  sum:  .quad  0
   11      00000000 
@@ -21,12 +21,15 @@ GAS LISTING sub.s 			page 1
   15              	    # register-to-register add
   16 0000 488B0425 	    movq num1, %rax   #load the rax with the first number
   16      00000000 
-  17              	
-  18              	
-  19              	_exit:
-  20              	    #Exit the program, returning the sum
-  21 0008 48C7C03C 	    movq $60, %rax
-  21      000000
-  22 000f 488B3C25 	    movq sum,   %rdi
-  22      00000000 
-  23 0017 0F05     	    syscall
+  17 0008 482B0425 	    subq num2, %rax   #subtract num2
+  17      00000000 
+  18 0010 48890425 	    movq %rax, sum
+  18      00000000 
+  19              	
+  20              	_exit:
+  21              	    #Exit the program, returning the sum
+  22 0018 48C7C03C 	    movq $60, %rax
+  22      000000
+  23 001f 488B3C25 	    movq sum,   %rdi
+  23      00000000 
+  24 0027 0F05     	    syscall
