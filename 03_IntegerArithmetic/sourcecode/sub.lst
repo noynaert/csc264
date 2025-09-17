@@ -1,0 +1,32 @@
+GAS LISTING sub.s 			page 1
+
+
+   1              	
+   2              	/* Exploring Integer Subtraction
+   3              	   file: sub.s
+   4              	   Assemble with GAS assembler
+   5              	 */
+   6              	
+   7              	.globl _start
+   8              	.data
+   9 0000 0E000000 	  num1: .quad 14
+   9      00000000 
+  10 0008 06000000 	  num2: .quad  6
+  10      00000000 
+  11 0010 00000000 	  sum:  .quad  0
+  11      00000000 
+  12              	
+  13              	.text
+  14              	_start:
+  15              	    # register-to-register add
+  16 0000 488B0425 	    movq num1, %rax   #load the rax with the first number
+  16      00000000 
+  17              	
+  18              	
+  19              	_exit:
+  20              	    #Exit the program, returning the sum
+  21 0008 48C7C03C 	    movq $60, %rax
+  21      000000
+  22 000f 488B3C25 	    movq sum,   %rdi
+  22      00000000 
+  23 0017 0F05     	    syscall

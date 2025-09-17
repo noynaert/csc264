@@ -1,0 +1,58 @@
+GAS LISTING add.s 			page 1
+
+
+   1              	
+   2              	/* Exploring suffixes with mov
+   3              	   file: suffixes.s
+   4              	   Assemble with GAS assembler
+   5              	 */
+   6              	
+   7              	.globl _start
+   8              	.data
+   9 0000 0F000000 	  num1: .quad 15
+   9      00000000 
+  10 0008 17000000 	  num2: .quad 23
+  10      00000000 
+  11 0010 00000000 	  sum:  .quad 0
+  11      00000000 
+  12              	
+  13              	.text
+  14              	_start:
+  15              	    # register-to-register add
+  16 0000 488B0425 	    movq num1, %rax   #load the rax with the first number
+  16      00000000 
+  17 0008 488B1C25 	    movq num2, %rbx   #load the second number into the rbx
+  17      00000000 
+  18 0010 4801D8   	    addq %rbx, %rax   #add the rbx to the rax, and keep the value in the rax
+  19              	    ## store the result
+  20 0013 48890425 	    movq %rax, sum
+  20      00000000 
+  21              	
+  22              	    # immediate to register add
+  23 001b 488B0425 	    movq num1, %rax
+  23      00000000 
+  24 0023 4883C00A 	    addq $0xa,  %rax
+  25              	    ## store the result
+  26 0027 48890425 	    movq %rax, sum
+  26      00000000 
+  27              	
+  28              	    # register to memory add
+  29 002f 48010425 	    addq %rax,sum  # should be 25 + 23
+  29      00000000 
+  30              	
+  31              	    ## attempt memory to memory
+  32              	    ## DOES NOT WORK
+  33              	    #  addq num1, sum
+  34              	
+  35              	    ## attempt immediate to memory.
+  36              	    ## DOES NOT WORK
+  37              	    #  addq $0B, sum
+  38              	
+  39              	_break0:
+  40              	_exit:
+  41              	    #Exit the program, returning the sum
+  42 0037 48C7C03C 	    movq $60, %rax
+  42      000000
+  43 003e 488B3C25 	    movq sum,   %rdi
+  43      00000000 
+  44 0046 0F05     	    syscall
