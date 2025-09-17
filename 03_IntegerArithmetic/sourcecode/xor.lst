@@ -1,0 +1,44 @@
+GAS LISTING xor.s 			page 1
+
+
+   1              	
+   2              	/* Exploring suffixes with mov
+   3              	   file: suffixes.s
+   4              	   Assemble with GAS assembler
+   5              	 */
+   6              	
+   7              	.globl _start
+   8              	.data
+   9 0000 FFFFFFFF 	  num1:    .quad 0x7fffffffffffffff
+   9      FFFFFF7F 
+  10 0008 EFCDAB89 	  num2:    .quad 0x0123456789abcdef
+  10      67452301 
+  11              	
+  12              	.text
+  13              	_start:
+  14              	    # fill registers with markers
+  15 0000 488B0425 	    movq num2, %rax
+  15      00000000 
+  16 0008 4889C3   	    movq %rax, %rbx
+  17 000b 4889C1   	    movq %rax, %rcx
+  18 000e 4889C2   	    movq %rax, %rdx
+  19              	
+  20              	_break0:
+  21 0011 48C7C000 	   movq $0, %rax
+  21      000000
+  22              	
+  23              	_break1:
+  24 0018 4831C0   	   xorq %rax, %rax
+  25 001b 31DB     	   xorl %ebx, %ebx
+  26 001d 6631C9   	   xorw %cx,  %cx
+  27 0020 30D2     	   xorb %dl,  %dl
+  28              	
+  29 0022 48310425 	   xorq %rax,num1
+  29      00000000 
+  30              	_exit:
+  31              	    #Exit the program, returning the sum
+  32 002a 48C7C03C 	    movq $60, %rax
+  32      000000
+  33 0031 48C7C700 	    movq $0,   %rdi
+  33      000000
+  34 0038 0F05     	    syscall
