@@ -9,7 +9,7 @@
             "type": "8086",
             "request": "launch",
             "name": "Debug current file",
-            "program": "${file}",
+            "program": "/home/noynaert/bin/asm ${file} ",
             "stopOnEntry": true
         }
     ]
