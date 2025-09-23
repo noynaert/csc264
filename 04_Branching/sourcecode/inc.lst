@@ -1,0 +1,40 @@
+GAS LISTING inc.s 			page 1
+
+
+   1              	/******************************************************************************************
+   2              	This program illustrates incq and decq commands.
+   3              	
+   4              	File: inc.s
+   5              	Programmer: J. Evan Noynaert
+   6              	Begun:  August, 2025
+   7              	
+   8              	Assemble with GNU "as" assembler under Linux
+   9              	
+  10              	*******************************************************************************************/
+  11              	
+  12              	.globl _start
+  13              	
+  14              	.data
+  15 0000 0F000000 	  num1: .quad 15
+  15      00000000 
+  16 0008 40000000 	  num2: .quad 0x40
+  16      00000000 
+  17              	.text
+  18              	_start:
+  19              	
+  20              	  # Increment a register
+  21 0000 488B0425 	  movq num1, %rax   # move the value stored in num1 into the rax register
+  21      00000000 
+  22 0008 48FFC0   	  incq %rax
+  23              	
+  24              	  # Increment a memory location
+  25 000b 48FF0425 	  incq num2
+  25      00000000 
+  26              	
+  27              	_exit:
+  28              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  29 0013 48C7C03C 	  movq $60, %rax
+  29      000000
+  30 001a 488B3C25 	  movq num2, %rdi
+  30      00000000 
+  31 0022 0F05     	  syscall
