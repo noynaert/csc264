@@ -1,0 +1,68 @@
+GAS LISTING jz.s 			page 1
+
+
+   1              	/******************************************************************************************
+   2              	This program illustrates conditional jump on the ZF
+   3              	
+   4              	The program works by calculating  2^4 power.
+   5              	If you change the base and exp values, you may
+   6              	change the calculation
+   7              	
+   8              	File: jz.s
+   9              	Programmer: J. Evan Noynaert
+  10              	Begun:  August, 2025
+  11              	
+  12              	Assemble with GNU "as" assembler under Linux
+  13              	
+  14              	  Registers:
+  15              	     rax is the accumulator of the result.
+  16              	     rcx will hold the exponent (controls the loop)
+  17              	     r8  will hold the multiplier
+  18              	
+  19              	*******************************************************************************************/
+  20              	
+  21              	.globl _start
+  22              	
+  23              	.data
+  24 0000 02000000 	  base: .quad 2   # The number being raised
+  24      00000000 
+  25 0008 04000000 	  exp:  .quad 4   # The power  (MUST BE 1 or Greater)
+  25      00000000 
+  26 0010 00000000 	  result: .quad 0 # b^e   or base^exp
+  26      00000000 
+  27              	
+  28              	.text
+  29              	_start:
+  30              	
+  31              	_setup:
+  32              	    ### initialize some values
+  33 0000 488B0C25 	    movq exp, %rcx
+  33      00000000 
+  34              	
+  35              	    ### load the accumulator with 1
+  36 0008 48C7C001 	    movq $1, %rax
+  36      000000
+  37              	
+  38              	    ### stash the base in r8 because we will multiply by the base
+  39 000f 4C8B0425 	    movq base, %r8
+  39      00000000 
+  40              	
+  41              	_top:
+  42 0017 49F7E0   	    mulq %r8
+  43 001a 48FFC9   	    decq %rcx
+  44 001d 75F8     	    jnz  _top
+  45              	
+  46              	_saveResult:
+  47 001f 48890425 	    movq %rax, result
+  47      00000000 
+  48              	
+  49              	_exit:
+  50              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+GAS LISTING jz.s 			page 2
+
+
+  51 0027 48C7C03C 	  movq $60, %rax
+  51      000000
+  52 002e 488B3C25 	  movq result, %rdi
+  52      00000000 
+  53 0036 0F05     	  syscall

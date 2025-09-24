@@ -1,0 +1,46 @@
+GAS LISTING jmp.s 			page 1
+
+
+   1              	/******************************************************************************************
+   2              	This program illustrates the fIP register
+   3              	and jmp.
+   4              	
+   5              	File: jmp.s
+   6              	Programmer: J. Evan Noynaert
+   7              	Begun:  August, 2025
+   8              	
+   9              	Assemble with GNU "as" assembler under Linux
+  10              	
+  11              	*******************************************************************************************/
+  12              	
+  13              	.globl _start
+  14              	
+  15              	.data
+  16 0000 0F000000 	  num1: .quad 15
+  16      00000000 
+  17 0008 40000000 	  num2: .quad 0x40
+  17      00000000 
+  18              	.text
+  19              	_start:
+  20              	
+  21              	
+  22              	
+  23              	  # Increment a register
+  24 0000 488B0425 	  movq num1, %rax   # move the value stored in num1 into the rax register
+  24      00000000 
+  25 0008 48FFC0   	  incq %rax
+  26              	
+  27              	  #  SKIP THE SECOND INCREMENT
+  28 000b EB08     	  jmp _exit
+  29              	
+  30              	  # Increment a memory location
+  31 000d 48FF0425 	  incq num2
+  31      00000000 
+  32              	
+  33              	_exit:
+  34              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  35 0015 48C7C03C 	  movq $60, %rax
+  35      000000
+  36 001c 488B3C25 	  movq num2, %rdi
+  36      00000000 
+  37 0024 0F05     	  syscall

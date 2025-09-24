@@ -1,0 +1,51 @@
+GAS LISTING eflags.s 			page 1
+
+
+   1              	/******************************************************************************************
+   2              	This program illustrates Eflags register
+   3              	and jmp.
+   4              	
+   5              	File: eflags.s
+   6              	Programmer: J. Evan Noynaert
+   7              	Begun:  August, 2025
+   8              	
+   9              	Assemble with GNU "as" assembler under Linux
+  10              	
+  11              	*******************************************************************************************/
+  12              	
+  13              	.globl _start
+  14              	
+  15              	.text
+  16              	_start:
+  17              	
+  18              	  # Set up RBX a number.  It does not change the eflags
+  19 0000 48C7C305 	  movq $5, %rbx
+  19      000000
+  20 0007 48C7C300 	  movq $0, %rbx
+  20      000000
+  21 000e 48C7C3EF 	  movq $0xabcdef,%rbx
+  21      CDAB00
+  22 0015 48C7C30F 	  movq $0x0f, %rbx
+  22      000000
+  23              	
+  24              	  # Any arithmetic will set the Zero Flag
+  25 001c 4831DB   	  xor %rbx, %rbx
+  26 001f 4883C305 	  addq $5, %rbx
+  27 0023 4883C3FB 	  addq $-5, %rbx
+  28              	
+  29              	  # The AddQ trick
+  30              	  # One way to set the ZF is to ADDQ $0 to thetarget.
+  31 0027 48C7C363 	  movq $99,%rbx
+  31      000000
+  32 002e 4883C300 	  addq $0, %rbx   # ZF is unset
+  33              	
+  34 0032 48C7C300 	  movq $0, %rbx
+  34      000000
+  35 0039 4883C300 	  addq $0, %rbx   # ZF is set
+  36              	
+  37              	_exit:
+  38              	  # use syscall to exit and return sum as an exit code.  System.exit(sum)  sys.exit(sum)
+  39 003d 48C7C03C 	  movq $60, %rax
+  39      000000
+  40 0044 4889DF   	  movq %rbx, %rdi
+  41 0047 0F05     	  syscall
