@@ -1,0 +1,169 @@
+
+%!TEX program = xelatex
+\documentclass[letterpaper,12pt]{exam}
+\usepackage{../videoNotes}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{soul}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{1.5}
+%\SetWatermarkColor{red!20}
+
+
+\newcommand{\unit}{Unit 04}
+\pagestyle{headandfoot}
+\firstpageheader{CSC 264 \semester\ \  \unit}{}{Name: $\rule{6cm}{0.15mm}$}
+\runningheader{CSC 264 \semester}{\unit}{Page \thepage\ of \numpages}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+\begin{document}
+
+%\underconstruction
+
+\section*{\unit\_010 -- Increment}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 7:00 }}
+\begin{questions}
+
+\begin{samepage}
+    \question What is the command to increment a quad by 1?
+    \vspace{5mm}
+\end{samepage}
+
+\begin{samepage}
+    \question What is the command to decrement a quad by 1?
+    \vspace{5mm}
+\end{samepage}
+
+\begin{samepage}
+    \question Can inrement and decrement commands be used to increment memory directly without referencing a register?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\section*{\unit\_020 -- RIP}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 8:45}}
+\begin{samepage}
+    \question Is RIP a general purpose register?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What does the RIP contain?
+    \vspace{5mm}
+\end{samepage}
+\rule{0.5\textwidth}{.4pt} %End of section
+\begin{samepage}
+    \question What does the debugger mean when it say " \_start+8
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question Why did I take out the \_exit label in the first part of the video?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+ \section*{\unit\_030 -- jmp}
+ \par{\fontfamily{qzc}\selectfont\textbf{Video Length 6:00}}
+ \begin{samepage}
+     \question What does the jmp command do?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+    \begin{samepage}
+        \question It is possible to jump a certain number of bytes.  Why is it generally preferable to jump to a label instead of specifying the bytes?    
+        \vspace{25mm}
+    \end{samepage}
+    \begin{center}
+ \rule{0.5\textwidth}{.4pt} %End of section
+    \end{center}
+%----------------------------------
+
+\section*{\unit\_040 -- eflags}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question Why doesn't the eflags register start with "R"?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question When are flags set?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What does it mean to "set" a flag?
+    \vspace{5mm}
+\end{samepage}
+\par
+  
+\begin{samepage}
+    \question What is the ZF flag?
+    \vspace{5mm}
+
+\end{samepage}
+\begin{samepage}
+    \question What types of instructions set the flags
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question Does the mov command set the ZF flag?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+\begin{samepage}
+    \question Does the xor command set the ZF flag?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question Does the add command set the ZF flag?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question It seems like the instruction to add 0 to a number is pointless.  Why is it done?  Explain how the "addq \$0 trick" works.
+     \vspace{20mm}
+ \end{samepage}
+ \par
+  
+
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_050 -- Conditional Jumps}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 17:00}}
+\begin{samepage}
+    \question What does the "jz" command do?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What does the "jnz" command do?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question In the video, I said that it is easier to create the loop with decrement than it would be to increment.  Explain why that is the case?  Try working out how the loop would work if we counted up.  Would it be more complicated or simpler?
+    \vspace{25mm}
+\end{samepage}
+
+\end{questions} 
+%footer
+\begin{center}
+    \rule{0.667\textwidth}{.8pt} %End of section
+\end{center}
+
+
+If you have any lingering questions or problems, please write them here or see me.
+\vfill
+\begin{center}
+\includegraphics{../csc264Logo}
+\end{center}
+\end{document} 
