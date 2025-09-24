@@ -1,4 +1,17 @@
 #!/usr/bin/bash
+
+# Simple script to assemble and link a single assembly language file
+# Usage:  asm.sh filename
+# where filename.s is the source file
+# Produces filename.exe as the executable
+# and filename.lst as the listing file
+#
+# Requires:  as, ld, cowsay, lolcat 
+# To install cowsay and lolcat on Ubuntu:
+# sudo apt-get install cowsay
+# sudo gem install lolcat
+# Author:  J. Evan Noynaert
+
 code=0
 ASM='s'
 EXE='.exe'
