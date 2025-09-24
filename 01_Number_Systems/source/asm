@@ -16,6 +16,7 @@ if [ -f $f.o ]; then rm $f.o; fi
 if [ -f $f.lst ]; then rm $f.lst; fi
 if [ -f $f ]; then rm $f; fi
 
+
 if [ -f $source ];
   then
      echo "Processing $f.$ASM"
@@ -27,13 +28,13 @@ fi
 object=$f.o
 if [ -f $source ]; 
 then
-  as -al=$f.lst -o $object  $source
+  as  -g -al -o $object --gdwarf-3  $source > $f.lst 2>&1
   code=$?
   if [ $code -ne 0 ];then
      echo "Assembler ended with error code $code" | lolcat
   fi 
   if [ -f $f.lst ]; then cat $f.lst; fi
-  if [ -f $object ]; then ld -o $f$EXE $object; fi
+  if [ -f $object ]; then ld -o $f$EXE $object >> $f.lst 2>&1; fi
   code=$?
   if [ $code -ne 0 ];then
      echo "Linker ended with error code $code" | lolcat
