@@ -1,0 +1,43 @@
+GAS LISTING spagetti.s 			page 1
+
+
+   1              	.globl _start
+   2              	
+   3              	.text
+   4              	_start:
+   5 0000 48C7C019 	  movq $25,%rax
+   5      000000
+   6 0007 EB1C     	  jmp thelabel
+   7              	
+   8              	somewhere:
+   9 0009 4889C7   	  movq %rax, %rdi
+  10 000c EB0E     	  jmp anotherlabel
+  11              	
+  12              	label1:
+  13 000e 4801D8   	  addq %rbx, %rax
+  14 0011 48C7C305 	  movq $5, %rbx
+  14      000000
+  15 0018 EB10     	  jmp here
+  16              	
+  17              	labellabel:
+  18 001a 0F05     	  syscall
+  19              	
+  20              	anotherlabel:
+  21 001c 48C7C03C 	  movq $60, %rax
+  21      000000
+  22 0023 EBF5     	  jmp labellabel
+  23              	
+  24              	thelabel:
+  25 0025 4889C3   	  movq %rax, %rbx
+  26 0028 EB05     	  jmp there
+  27              	
+  28              	here:
+  29 002a 48F7F3   	  divq %rbx
+  30 002d EBDA     	  jmp somewhere
+  31              	
+  32              	there:
+  33 002f 4883C305 	  addq $5, %rbx
+  34 0033 EBD9     	  jmp label1
+  35              	
+  36              	anywhere:
+  37 0035 EBEE     	  jmp thelabel

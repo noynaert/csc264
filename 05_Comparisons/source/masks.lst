@@ -1,0 +1,26 @@
+GAS LISTING masks.s 			page 1
+
+
+   1              	/*
+   2              	   Demonstrates using a bitmask to determine if a number is even or odd.
+   3              	*/
+   4              	.globl _start
+   5              	.data  
+   6 0000 08000000 	   number: .quad 8
+   6      00000000 
+   7 0008 01000000 	   eoMask: .quad 0x01
+   7      00000000 
+   8              	
+   9              	.text
+  10              	_start:
+  11              	  
+  12 0000 4C8B0425 	movq number, %r8
+  12      00000000 
+  13 0008 4C230425 	andq eoMask, %r8
+  13      00000000 
+  14              	
+  15              	_exit:
+  16 0010 48C7C03C 	    movq $60, %rax
+  16      000000
+  17 0017 4C89C7   	    mov  %r8, %rdi
+  18 001a 0F05     	    syscall

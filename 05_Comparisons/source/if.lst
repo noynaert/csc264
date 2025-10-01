@@ -1,0 +1,48 @@
+GAS LISTING if.s 			page 1
+
+
+   1              	/*
+   2              	   Demonstrates using a bitmask to determine if a number is even or odd.
+   3              	
+   4              	   Registers:
+   5              	      R8 will hold the number being tested
+   6              	      R9b will hold the label.
+   7              	
+   8              	*/
+   9              	.globl _start
+  10              	.data  
+  11 0000 08000000 	   number: .quad 8
+  11      00000000 
+  12 0008 01000000 	   eoMask: .quad 0x01
+  12      00000000 
+  13 0010 00       	   label:  .byte 0x0 #will hold eithe "E" or "O" at the end of the program
+  14 0011 4576656E 	   even:   .ascii "Even"
+  15 0015 4F6464   	   odd:    .ascii "Odd"
+  16              	.text
+  17              	_start:
+  18              	  
+  19              	  # load the number into r8
+  20 0000 4C8B0425 	  movq number, %r8
+  20      00000000 
+  21              	
+  22              	  #load the label as odd in r9b
+  23 0008 448A0C25 	  movb odd, %r9b
+  23      00000000 
+  24              	
+  25              	  # if the number is even, set label (r9b) to even
+  26 0010 4C230425 	  andq eoMask,%r8 #mask the last bit.  Is it Zero?
+  26      00000000 
+  27 0018 7508     	  jnz _output
+  28 001a 448A0C25 	  movb even, %r9b
+  28      00000000 
+  29              	
+  30              	  _output:
+  31 0022 44880C25 	  movb %r9b, label
+  31      00000000 
+  32              	
+  33              	_exit:
+  34 002a 48C7C03C 	    movq $60, %rax
+  34      000000
+  35 0031 408A3C25 	    movb  label, %dil
+  35      00000000 
+  36 0039 0F05     	    syscall
