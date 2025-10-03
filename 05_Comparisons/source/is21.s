@@ -17,7 +17,7 @@
 
 .globl _start
 .data
-   age: .quad 20
+   age: .quad 21
    yes: .ascii "Yes"   # Y is ascii code 89
    no:  .ascii "No"    # N is ascii code 78
    allowedIn: .byte 0  # set to either Y or No
@@ -33,20 +33,20 @@ _start:
    # initially, no one is allowed in.
    movb   no, %r9b  #set the label in r9
 
-   #do the age comparison
-   cmpq   $21, %r8    #club only allows in 21 year olds.
-   jne     _not21
-   movb   yes, %r9b   #set approval status
-   jmp _saveOutput    #we have a solution; jump to save solution.
+
+   #check to see if the person is 21
+   cmpq  $21, %r8
+   jne    _not21
+   movb  yes, %r9b
    _not21:
 
-   # other criteria would be tested here
+   #check some other criteria
 
-   _saveOutput:
+_saveOutput:
    movb   %r9b, allowedIn
 
 _exit:
    movq $60, %rax
-   movb %r9b, %dil
+   movb allowedIn, %dil
    syscall
 

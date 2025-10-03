@@ -1,0 +1,65 @@
+GAS LISTING is21.s 			page 1
+
+
+   1              	/* 
+   2              	   Demonstrates use of cmp and associated jump instructions
+   3              	
+   4              	   This code determines if the age is equal to 21.
+   5              	
+   6              	   In the future we may expand this so it checks for other things, such
+   7              	   as being from a certain state
+   8              	
+   9              	   file: is18.s
+  10              	   Compile with GNU as assembler
+  11              	
+  12              	   Registers:  
+  13              	     r8 will hold the age being tested
+  14              	     r9b will hold the flag indicating the result.  
+  15              	
+  16              	*/
+  17              	
+  18              	.globl _start
+  19              	.data
+  20 0000 15000000 	   age: .quad 21
+  20      00000000 
+  21 0008 596573   	   yes: .ascii "Yes"   # Y is ascii code 89
+  22 000b 4E6F     	   no:  .ascii "No"    # N is ascii code 78
+  23 000d 00       	   allowedIn: .byte 0  # set to either Y or No
+  24              	
+  25              	
+  26              	.text
+  27              	_start:
+  28              	
+  29              	   #setup:  
+  30              	   # set the age 
+  31 0000 4C8B0425 	   movq age, %r8
+  31      00000000 
+  32              	
+  33              	   # initially, no one is allowed in.
+  34 0008 448A0C25 	   movb   no, %r9b  #set the label in r9
+  34      00000000 
+  35              	
+  36              	
+  37              	   #check to see if the person is 21
+  38 0010 4983F815 	   cmpq  $21, %r8
+  39 0014 7508     	   jne    _not21
+  40 0016 448A0C25 	   movb  yes, %r9b
+  40      00000000 
+  41              	   _not21:
+  42              	
+  43              	   #check some other criteria
+  44              	
+  45              	_saveOutput:
+  46 001e 44880C25 	   movb   %r9b, allowedIn
+  46      00000000 
+  47              	
+  48              	_exit:
+  49 0026 48C7C03C 	   movq $60, %rax
+  49      000000
+  50 002d 408A3C25 	   movb allowedIn, %dil
+  50      00000000 
+GAS LISTING is21.s 			page 2
+
+
+  51 0035 0F05     	   syscall
+  52              	
