@@ -13,53 +13,46 @@ GAS LISTING is21.s 			page 1
   10              	   Compile with GNU as assembler
   11              	
   12              	   Registers:  
-  13              	     r8 will hold the age being tested
+  13              	     r8 will hold the age being tested  (how old is the person)
   14              	     r9b will hold the flag indicating the result.  
   15              	
   16              	*/
   17              	
   18              	.globl _start
   19              	.data
-  20 0000 15000000 	   age: .quad 21
+  20 0000 16000000 	   age: .quad 22
   20      00000000 
   21 0008 596573   	   yes: .ascii "Yes"   # Y is ascii code 89
   22 000b 4E6F     	   no:  .ascii "No"    # N is ascii code 78
-  23 000d 00       	   allowedIn: .byte 0  # set to either Y or No
+  23 000d 03       	   allowedIn: .byte 3  # set to either Y or No
   24              	
   25              	
   26              	.text
   27              	_start:
   28              	
-  29              	   #setup:  
-  30              	   # set the age 
-  31 0000 4C8B0425 	   movq age, %r8
+  29              	  #setup
+  30 0000 4C8B0425 	  movq age, %r8         # move the age of the person into r8
+  30      00000000 
+  31 0008 448A0C25 	  movb no, %r9b         # initially, the person is not allowed in.
   31      00000000 
   32              	
-  33              	   # initially, no one is allowed in.
-  34 0008 448A0C25 	   movb   no, %r9b  #set the label in r9
-  34      00000000 
-  35              	
-  36              	
-  37              	   #check to see if the person is 21
-  38 0010 4983F815 	   cmpq  $21, %r8
-  39 0014 7508     	   jne    _not21
-  40 0016 448A0C25 	   movb  yes, %r9b
-  40      00000000 
-  41              	   _not21:
-  42              	
-  43              	   #check some other criteria
-  44              	
-  45              	_saveOutput:
-  46 001e 44880C25 	   movb   %r9b, allowedIn
+  33              	  #check to see if the person is exactly 21
+  34 0010 4983F815 	  cmpq $21, %r8        # is the person whose age is in r8 equal to 21?
+  35 0014 7508     	  jne  _is21CheckComplete
+  36 0016 448A0C25 	  movb yes, %r9b       # stamp their hand and let them in.
+  36      00000000 
+  37              	  _is21CheckComplete:
+  38              	
+  39              	
+  40              	  #save the output as the return value
+  41              	  _saveOutput:
+  42 001e 44880C25 	  movb %r9b, allowedIn
+  42      00000000 
+  43              	
+  44              	_exit:
+  45 0026 48C7C03C 	   movq $60, %rax
+  45      000000
+  46 002d 408A3C25 	   movb allowedIn, %dil
   46      00000000 
-  47              	
-  48              	_exit:
-  49 0026 48C7C03C 	   movq $60, %rax
-  49      000000
-  50 002d 408A3C25 	   movb allowedIn, %dil
-  50      00000000 
-GAS LISTING is21.s 			page 2
-
-
-  51 0035 0F05     	   syscall
-  52              	
+  47 0035 0F05     	   syscall
+  48              	

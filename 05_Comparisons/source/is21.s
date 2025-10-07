@@ -10,14 +10,14 @@
    Compile with GNU as assembler
 
    Registers:  
-     r8 will hold the age being tested
+     r8 will hold the age being tested  (how old is the person)
      r9b will hold the flag indicating the result.  
 
 */
 
 .globl _start
 .data
-   age: .quad 21
+   age: .quad 22
    yes: .ascii "Yes"   # Y is ascii code 89
    no:  .ascii "No"    # N is ascii code 78
    allowedIn: .byte 0  # set to either Y or No
@@ -26,24 +26,21 @@
 .text
 _start:
 
-   #setup:  
-   # set the age 
-   movq age, %r8
+  #setup
+  movq age, %r8         # move the age of the person into r8
+  movb no, %r9b         # initially, the person is not allowed in.
 
-   # initially, no one is allowed in.
-   movb   no, %r9b  #set the label in r9
+  #check to see if the person is exactly 21
+  cmpq $21, %r8        # is the person whose age is in r8 equal to 21?
+  jne  _is21CheckComplete
+  movb yes, %r9b       # stamp their hand and let them in.
+  _is21CheckComplete:
 
+  # TODO:  Add more checks
 
-   #check to see if the person is 21
-   cmpq  $21, %r8
-   jne    _not21
-   movb  yes, %r9b
-   _not21:
-
-   #check some other criteria
-
-_saveOutput:
-   movb   %r9b, allowedIn
+  #save the output as the return value
+  _saveOutput:
+  movb %r9b, allowedIn
 
 _exit:
    movq $60, %rax
