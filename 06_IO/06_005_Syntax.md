@@ -1,6 +1,6 @@
-# 06.005 New Syntax
+# 06.005 New Syntax (for output)
 
-## Declaring variables with `.ascii` and `asciz
+## Declaring variables with `.ascii` and `.asciz
 
 The .ascii directive is used to declare a string without a null terminator.  The .asciz directive is used to declare a string with a null terminator.
 
@@ -10,10 +10,9 @@ The .ascii directive is used to declare a string without a null terminator.  The
     0003 78797A00 	  last:      .asciz "xyz"
 ```
 
+## Calculating length of a string using `.`
 
-## Callculating length of a string using `.`
-
-A period (`.`) can be used to get the current address in the assembly code.  This can be used to calculate the length of a string by subtracting the starting address of the string from the current address.
+A period (`.`) can be used to get the current address in the assembly code.  This can be used to calculate the length of a string by subtracting the starting address of the string from the current address.  The length must be set immediately after the string for this to work.
 
 Note that the `.` is an assembler directive.  It only applies at the time the program is assembled.  It does not apply at runtime.
 
@@ -21,6 +20,8 @@ Note that the `.` is an assembler directive.  It only applies at the time the pr
                  	.data
     0000 616263   	  letters:   .ascii "abc"
     0003 03000000 	  len:       .quad . - letters
+```
+A longer example:
 
 ```assembly
                  	.data
@@ -37,7 +38,6 @@ The dollar sign (`$`) can be used to get the address of a label.  This includes 
 
 ```assembly
     movq $letters, %rax   # rax = address of letters
-    movb (%rax), %bl      # bl = first byte of letters (a)
 ```
 
 ## Dereferencing a pointer using `()`
@@ -48,3 +48,6 @@ Parentheses can be used to dereference a pointer.  This is similar to using `*` 
     movb (%rdi), %bl      # bl = first byte of letters (a)
 ```
 
+The command `movq $letters, %rdi` means "move the address of letters into rdi".
+
+The command `movb (%rdi), %bl` means "move the byte at the address in rdi into bl".

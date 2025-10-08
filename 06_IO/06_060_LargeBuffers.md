@@ -5,3 +5,4 @@ Large buffers are often put in the `.bss` section of a program. The `.bss` secti
 ## Example
 ```asm
 .bss
+    buffer: .skip 4096, 0   # reserve 4096 bytes, initialized to 0

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_Comparisons/05_050_Comparisons.md.md",
+                "file": "06_IO/06_010_Syscall.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05_050_Comparisons.md"
+              "title": "06_010_Syscall"
             }
           }
         ]
@@ -172,20 +172,23 @@
   },
   "active": "abc9937d2dd726ca",
   "lastOpenFiles": [
-    "05_Comparisons/05_040_if_else.md.md",
+    "videoNotes/unit06/unit06.synctex(busy)",
+    "videoNotes/ex02Cheatsheet/cheatsheetExam02.synctex(busy)",
+    "videoNotes/ex02Cheatsheet/cheatsheetExam02.out",
+    "videoNotes/ex02Cheatsheet/cheatsheetExam02.aux",
+    "videoNotes/unit06/unit06.out",
+    "videoNotes/unit06/unit06.aux",
+    "06_IO/06_005_Syntax.md",
+    "videoNotes/unit06/unit06.synctex.gz",
+    "06_IO/06_010_Syscall.md",
     "05_Comparisons/05_050_Comparisons.md.md",
+    "05_Comparisons/05_040_if_else.md.md",
     "05_Comparisons/source/ifelse.exe",
     "05_Comparisons/source/ifelse.o",
     "05_Comparisons/source/ifelse.lst",
     "05_Comparisons/tmp/05_050_Loops.md",
     "05_Comparisons/tmp",
     "05_Comparisons/05_030_if.md.md",
-    "05_Comparisons/source/ifelse.s",
-    "05_Comparisons/source/if.exe",
-    "05_Comparisons/source/a.out",
-    "05_Comparisons/source/if.o",
-    "videoNotes/unit01/cheatsheetExam01.pdf",
-    "05_Comparisons/source/if.py~",
     "05_Comparisons/05_020_Masking.md",
     "05_Comparisons/05_015_Structured_Programming.md.md",
     "05_Comparisons/05_010_SpaghettiBowlProgramming.md"

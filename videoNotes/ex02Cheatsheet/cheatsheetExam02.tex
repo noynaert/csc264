@@ -13,6 +13,8 @@
 \pagestyle{headandfoot}
 
 \begin{document}
+\section*{\unit}
+\vspace{10mm}
 \begin{tabular}{| c | c | c | c| c |}
  \hline
     rax & System Call & rdi & rsi & rdx \\
@@ -21,8 +23,11 @@
     \hline
     $1$ & write & file descriptor & buffer & number of bytes \\
     \hline
+    $60$ & exit & exit code & --- & --- \\
+    \hline
 \end{tabular}
 \par
+\newpage
 \vspace{0.5in}
 The following is probably a placeholder, and it won't show up on the exam version.\\
 \begin{tabular}{|c|c|c|c|}
