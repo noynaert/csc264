@@ -1,14 +1,14 @@
-# Null Terminated Write
+/*
+    Syscall write a null-terminated string to the console
 
-## ASCII Code 0
+    This program optimizes the loop by moving the statements that store constants in registers.
+    The step of storing 1 in the rax was left in the loop because potentially the syscall might not return a 1.
+*/
 
-ASCII code 0 is the null character, which is used to terminate strings in C. It has the decimal value of 0 and is often represented as `'\0'` in C programming.
-
-## The optimized version
-
-```
 .globl _start
 .data
+  first:   .ascii "abcdefg\n\r"
+  firstN: .quad  . - first
   last:   .asciz  "wxyz\n"
   empty:  .asciz  ""
 .text
@@ -31,4 +31,8 @@ _start:
    jmp _printTilZero
 
    _endPrintTilZero:
-```
+
+_exit:
+  movq $60, %rax
+  movq $0, %rdi
+  syscall

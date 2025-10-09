@@ -1,0 +1,46 @@
+GAS LISTING 030_wz.s 			page 1
+
+
+   1              	/*
+   2              	    Syscall write a null-terminated string to the console
+   3              	*/
+   4              	
+   5              	.globl _start
+   6              	.data
+   7 0000 61626364 	  first:   .ascii "abcdefg\n\r"
+   7      6566670A 
+   7      0D
+   8 0009 09000000 	  firstN: .quad  . - first
+   8      00000000 
+   9 0011 7778797A 	  last:   .asciz  "wxyz\n"
+   9      0A00
+  10 0017 00       	  empty:  .asciz  ""
+  11              	.text
+  12              	_start:
+  13              	
+  14              	   # Write 'last' to the console one byte at a time until Zero is found.
+  15              	   # Set up the writing loop
+  16 0000 48C7C600 	   movq $last, %rsi    #load the address of the buffer to be printed
+  16      000000
+  17              	
+  18              	   _printTilZero:
+  19 0007 803E00   	   cmpb $0, (%rsi)         # if the address in rsi is pointing to zero,
+  20 000a 741C     	   je   _endPrintTilZero   #    then jump to the end of the loop to exit
+  21 000c 48C7C001 	   movq $1, %rax            # Call the write routine with syscall
+  21      000000
+  22 0013 48C7C701 	   movq $1, %rdi            # Field descriptor of console is 1
+  22      000000
+  23 001a 48C7C201 	   movq $1, %rdx            # print 1 byte
+  23      000000
+  24 0021 0F05     	   syscall                 # call the write routine
+  25 0023 48FFC6   	   inc %rsi
+  26 0026 EBDF     	   jmp _printTilZero
+  27              	
+  28              	   _endPrintTilZero:
+  29              	
+  30              	_exit:
+  31 0028 48C7C03C 	  movq $60, %rax
+  31      000000
+  32 002f 48C7C700 	  movq $0, %rdi
+  32      000000
+  33 0036 0F05     	  syscall

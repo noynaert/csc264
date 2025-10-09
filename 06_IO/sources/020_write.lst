@@ -1,0 +1,34 @@
+GAS LISTING 020_write.s 			page 1
+
+
+   1              	/*
+   2              	    Syscall write with known number of bytes
+   3              	*/
+   4              	
+   5              	.globl _start
+   6              	.data
+   7 0000 61626364 	  first:   .ascii "abcdefg\n\r"
+   7      6566670A 
+   7      0D
+   8 0009 09000000 	  firstN: .quad  . - first
+   8      00000000 
+   9              	.text
+  10              	_start:
+  11              	
+  12              	   # Write 'first' to the console
+  13 0000 48C7C001 	   movq $1, %rax   # write operation is 1
+  13      000000
+  14 0007 48C7C701 	   movq $1, %rdi   # file descriptor for console is 1
+  14      000000
+  15 000e 48C7C600 	   movq $first, %rsi  # pointer to the buffer to be written
+  15      000000
+  16 0015 488B1425 	   movq  firstN, %rdx  # Number of bytes to write
+  16      00000000 
+  17 001d 0F05     	   syscall
+  18              	
+  19              	_exit:
+  20 001f 48C7C03C 	  movq $60, %rax
+  20      000000
+  21 0026 488B3C25 	  movq firstN, %rdi
+  21      00000000 
+  22 002e 0F05     	  syscall

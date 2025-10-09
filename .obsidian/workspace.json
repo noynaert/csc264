@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06_IO/06_010_Syscall.md",
+                "file": "06_IO/06_020_Write.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06_010_Syscall"
+              "title": "06_020_Write"
             }
           }
         ]
@@ -173,21 +173,21 @@
   "active": "abc9937d2dd726ca",
   "lastOpenFiles": [
     "videoNotes/unit06/unit06.synctex(busy)",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.synctex(busy)",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.out",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.aux",
     "videoNotes/unit06/unit06.out",
     "videoNotes/unit06/unit06.aux",
-    "06_IO/06_005_Syntax.md",
-    "videoNotes/unit06/unit06.synctex.gz",
+    "06_IO/sources/030_optimized.exe",
+    "06_IO/sources/030_optimized.o",
+    "06_IO/sources/030_optimized.lst",
+    "06_IO/sources/030_optimized.s",
+    "06_IO/sources/030_wz.exe",
+    "06_IO/sources/a.out",
+    "06_IO/sources/030_wz.o",
+    "06_IO/sources/030_wz.lst",
     "06_IO/06_010_Syscall.md",
+    "06_IO/06_005_Syntax.md",
     "05_Comparisons/05_050_Comparisons.md.md",
     "05_Comparisons/05_040_if_else.md.md",
-    "05_Comparisons/source/ifelse.exe",
-    "05_Comparisons/source/ifelse.o",
-    "05_Comparisons/source/ifelse.lst",
     "05_Comparisons/tmp/05_050_Loops.md",
-    "05_Comparisons/tmp",
     "05_Comparisons/05_030_if.md.md",
     "05_Comparisons/05_020_Masking.md",
     "05_Comparisons/05_015_Structured_Programming.md.md",
