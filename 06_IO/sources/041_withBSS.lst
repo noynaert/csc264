@@ -1,0 +1,29 @@
+041_withBSS.s: Assembler messages:
+041_withBSS.s: Warning: end of file not at end of a line; newline inserted
+041_withBSS.s:8: Warning: ignoring fill value in section `.bss'
+GAS LISTING 041_withBSS.s 			page 1
+
+
+   1              	/*
+   2              	Illustrates .skip
+   3              	*/
+   4              	.globl _start
+   5              	.data
+   6 0000 486900   	     info:      .asciz "Hi"
+   7              	.bss
+   8 0000 00000000 	     bigBuffer: .skip 4096, 0x0B
+****  Warning: ignoring fill value in section `.bss'
+   8      00000000 
+   8      00000000 
+   8      00000000 
+   8      00000000 
+   9              	.text
+  10              	_start:
+  11              	
+  12              	
+  13              	_exit:
+  14 0000 48C7C03C 	  movq $60, %rax
+  14      000000
+  15 0007 48C7C700 	  movq $0,  %rdi
+  15      000000
+  16 000e 0F05     	  syscall...

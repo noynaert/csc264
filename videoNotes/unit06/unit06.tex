@@ -7,10 +7,10 @@
 \usepackage{soul}
 \newcommand{\unit}{Unit 06}
 
-\usepackage{draftwatermark}
-\SetWatermarkText{DRAFT}
-\SetWatermarkScale{1.5}
-\SetWatermarkColor{red!20}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{1.5}
+%\SetWatermarkColor{red!20}
 
 \pagestyle{headandfoot}
 \firstpageheader{CSC 264 \semester\ \  \unit}{}{Name: $\rule{6cm}{0.15mm}$}
@@ -147,28 +147,80 @@ NOTE:  In the video I forgot to mention the return value in RAX.  After syscall,
 \end{samepage}
 \par
  \begin{samepage}
-     \question Write out the loop by hand.  Think about it as you write it.  Did I miss any other improvements?  If so, comment on them. (The instructor is old school, and he still thinks that writing things by hand helps you understand them.)  Also, remember that the source code is on github in the sources folder if don't want to stare at the paused video to get the code.
+     \question Write out the loop by hand.  Think about it as you write it.  Did I miss any other improvements?  If so, comment on them. \textbf{\textit{Add Comments to most of the lines to explain what is happening.}}  Also, remember that the source code is on github in the sources folder if don't want to stare at the paused video to get the code.
      \vspace{75mm}
  \end{samepage}
  \par
   
 \rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
-
-
-
+\section*{\unit\_040 -- Syntax For Input}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question What does the .skip directive do?  What arguments does it take?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the .bss section?  How is it different than the .data section?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question How does the .skip directive work differently in the .bss section than it does in the .data section?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_050 -- Reading fixed length strings }
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question How is reading a fixed lenght string similar to writing a fixed length string?  How is it different?
+    \vspace{25mm}
+\end{samepage}
+\par
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_060 Reading into a buffer -- }
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question In the loop, what did I use R15 for?  What are two reasons I needed to keep track of that number?
+    \vspace{25mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question The code for reading into a buffer had some similarities to writing a null-terminated string.  How were they similar, and how were they different?
+    \vspace{15mm}
+\end{samepage}
+\begin{samepage}
+    \question There were two condidtions that could cause the loop to end.  What were they?  If you had been coding this in C or Python, would you have used an "or" condition or an "and" to control the loop?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question Hand write the part of the program that read from the console into the buffer (you don't need to do either of the writing blocks.)  Think about the code. Does the RAX register need to be loaded in two places?  Are there any optimizations or changes you would make?
+     \textbf{\textit{Add Comments to most of the lines to explain what is happening.}}
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+%----------------------------------
 
 
 \end{questions} 
 %footer
-\begin{center}
-    \rule{0.667\textwidth}{.8pt} %End of section
-\end{center}
+%\begin{center}
+ %   \rule{0.667\textwidth}{.8pt} %End of section
+%\end{center}
 
 
-If you have any lingering questions or problems, please write them here or see me.
-\vfill
-\begin{center}
-\includegraphics{../csc264Logo}
-\end{center}
+%If you have any lingering questions or problems, please write them here or see me.
+%\vfill
+%\begin{center}
+%\includegraphics{../csc264Logo}
+%\end{center}
 \end{document} 

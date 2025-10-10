@@ -1,0 +1,67 @@
+GAS LISTING 050_read3.s 			page 1
+
+
+   1              	/*
+   2              	  read 3 characters
+   3              	*/
+   4              	
+   5              	.globl _start
+   6              	
+   7              	.data
+   8 0000 404040   	    buffer: .skip 3,64 # buffer to hold characters
+   9              	                       #    Initially filled with @@@
+  10 0003 03000000 	    bufferN:.quad 3
+  10      00000000 
+  11 000b 456E7465 	    prompt: .ascii "Enter three characters: "
+  11      72207468 
+  11      72656520 
+  11      63686172 
+  11      61637465 
+  12 0023 18000000 	    promptN: .quad .-prompt
+  12      00000000 
+  13              	
+  14              	.text
+  15              	_start:
+  16              	   #write the prompt
+  17 0000 48C7C001 	   movq $1, %rax
+  17      000000
+  18 0007 48C7C701 	   movq $1, %rdi
+  18      000000
+  19 000e 48C7C600 	   movq $prompt,%rsi
+  19      000000
+  20 0015 488B1425 	   movq  promptN,%rdx
+  20      00000000 
+  21 001d 0F05     	   syscall
+  22              	
+  23              	    # Read 3 characters from the console
+  24 001f 48C7C000 	    movq $0, %rax    #0 is the write function
+  24      000000
+  25 0026 48C7C701 	    movq $1, %rdi    #1 is the field descriptor for console
+  25      000000
+  26 002d 48C7C600 	    movq $buffer, %rsi #Load the address of the buffer into rsi
+  26      000000
+  27 0034 488B1425 	    movq bufferN, %rdx
+  27      00000000 
+  28 003c 0F05     	    syscall
+  29              	
+  30              	   #write the buffer  (echo what the user entered)
+  31 003e 48C7C001 	   movq $1, %rax
+  31      000000
+  32 0045 48C7C701 	   movq $1, %rdi
+  32      000000
+  33 004c 48C7C600 	   movq $buffer,%rsi
+  33      000000
+  34 0053 488B1425 	   movq  bufferN,%rdx
+  34      00000000 
+  35 005b 0F05     	   syscall
+  36              	
+  37              	
+  38              	_exit:
+  39 005d 48C7C03C 	  movq $60, %rax
+GAS LISTING 050_read3.s 			page 2
+
+
+  39      000000
+  40 0064 48C7C700 	  movq $0, %rdi
+  40      000000
+  41 006b 0F05     	  syscall

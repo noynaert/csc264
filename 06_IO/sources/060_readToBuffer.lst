@@ -1,0 +1,92 @@
+GAS LISTING 060_readToBuffer.s 			page 1
+
+
+   1              	/*
+   2              	  read up to 4096 bytes from the console and store it in buffer.
+   3              	
+   4              	Registers:
+   5              	   r15 is used to count the characters
+   6              	
+   7              	*/
+   8              	
+   9              	.globl _start
+  10              	
+  11              	.bss
+  12 0000 00000000 	      buffer: .skip 4096
+  12      00000000 
+  12      00000000 
+  12      00000000 
+  12      00000000 
+  13              	
+  14              	.data
+  15 0000 00000000 	    bufferN:.quad 0
+  15      00000000 
+  16 0008 00100000 	    bufferMax: .quad 4096  #Limit user input.
+  16      00000000 
+  17 0010 456E7465 	    prompt: .ascii "Enter a sentence (no tabs) Enter to quit: "
+  17      72206120 
+  17      73656E74 
+  17      656E6365 
+  17      20286E6F 
+  18 003a 2A000000 	    promptN: .quad .-prompt
+  18      00000000 
+  19              	
+  20              	.text
+  21              	_start:
+  22              	   # write the prompt
+  23 0000 48C7C001 	   movq $1, %rax
+  23      000000
+  24 0007 48C7C701 	   movq $1, %rdi
+  24      000000
+  25 000e 48C7C600 	   movq $prompt,%rsi
+  25      000000
+  26 0015 488B1425 	   movq  promptN,%rdx
+  26      00000000 
+  27 001d 0F05     	   syscall
+  28              	
+  29              	    # Read into a buffer.  Stop when ASCII code < 32 is read
+  30              	    # movq $0, %rax
+  31 001f 48C7C701 	    movq $1, %rdi
+  31      000000
+  32 0026 48C7C600 	    movq $buffer,%rsi
+  32      000000
+  33 002d 48C7C201 	    movq $1, %rdx
+  33      000000
+  34 0034 4C8B3C25 	    movq bufferN, %r15
+  34      00000000 
+  35              	    _readByChar:
+  36 003c 48C7C000 	    movq $0, %rax
+  36      000000
+  37 0043 0F05     	    syscall
+GAS LISTING 060_readToBuffer.s 			page 2
+
+
+  38 0045 803E20   	    cmpb $32, (%rsi)
+  39 0048 721A     	    jb _endReadByChar
+  40 004a 48FFC6   	    inc %rsi
+  41 004d 49FFC7   	    inc %r15
+  42 0050 4C893C25 	    movq %r15, bufferN
+  42      00000000 
+  43 0058 4C3B3C25 	    cmpq bufferMax, %r15
+  43      00000000 
+  44 0060 7402     	    je   _endReadByChar
+  45 0062 EBD8     	    jmp  _readByChar
+  46              	    _endReadByChar:
+  47              	
+  48              	   #print
+  49 0064 48C7C001 	   movq $1, %rax
+  49      000000
+  50 006b 48C7C701 	   movq $1, %rdi
+  50      000000
+  51 0072 48C7C600 	   movq $buffer,%rsi
+  51      000000
+  52 0079 488B1425 	   movq  bufferN,%rdx
+  52      00000000 
+  53 0081 0F05     	   syscall
+  54              	
+  55              	_exit:
+  56 0083 48C7C03C 	  movq $60, %rax
+  56      000000
+  57 008a 48C7C700 	  movq $0, %rdi
+  57      000000
+  58 0091 0F05     	  syscall
