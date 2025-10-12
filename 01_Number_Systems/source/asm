@@ -1,23 +1,4 @@
 #!/usr/bin/bash
-
-# Simple script to assemble and link a single assembly language file
-# Usage:  asm.sh filename
-# where filename.s is the source file
-# Produces filename.exe as the executable
-# and filename.lst as the listing file
-#
-# Requires:  as, ld, cowsay, lolcat 
-#
-# To install cowsay and lolcat on Ubuntu:
-# sudo apt-get install cowsay
-# sudo gem install lolcat
-#
-# To install cowsay and lolcat on Fedora:
-# sudo dnf install cowsay
-# sudo gem install lolcat
-#  
-# Author:  J. Evan Noynaert
-
 code=0
 ASM='s'
 EXE='.exe'
@@ -29,13 +10,17 @@ then
 fi
 f=$1
 
+f=$(echo $f | sed 's/\.[^.]*$//')
+
+echo "File is $f"
+
 source="$f.$ASM"
 echo "Processing $f as $source"
 if [ -f $f.o ]; then rm $f.o; fi
 if [ -f $f.lst ]; then rm $f.lst; fi
-if [ -f $f ]; then rm $f; fi
+#if [ -f $f ]; then rm $f; fi
 
-
+clear
 if [ -f $source ];
   then
      echo "Processing $f.$ASM"
@@ -47,7 +32,7 @@ fi
 object=$f.o
 if [ -f $source ]; 
 then
-  as  -g -al -o $object --gdwarf-3  $source > $f.lst 2>&1
+  as   -al --gstabs -o $object   $source > $f.lst 2>&1
   code=$?
   if [ $code -ne 0 ];then
      echo "Assembler ended with error code $code" | lolcat
