@@ -126,7 +126,7 @@
 \end{samepage}
 \par
  \begin{samepage}
-     \question What does the \$ mean in \texttt{\textbf{movq $message, rdi}}?
+     \question What does the \$ mean in \texttt{\textbf{movq \$message, rdi}}?
      \vspace{5mm}
  \end{samepage}
  \par
@@ -134,7 +134,47 @@
 
 \rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
+\section*{\unit\_040 -- printf}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 11:15}}
+\begin{samepage}
+    \question Why do we need to clear the \texttt{\textbf{rax}} register before calling printf?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question The following line shows a printf statement in C.  Write the equivalent in assembler.
+    \begin{verbatim}
+        int age = 22;
 
+        printf("He is %d years old\n", age);
+    \end{verbatim}
+    \vspace{45mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question Why do strings require a \$ before the variable name?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What format specifier is used for each of the following?
+      \begin{itemize}
+        \item integer displayed in decimal:
+        \item integer displayed in hex: 
+        \item string:
+      \end{itemize}
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+\begin{samepage}
+    \question Suppose you were going to call printf with 6 arguments.  What registers would you use?  (show them in order)
+    \vspace{5mm}
+\end{samepage}
+\par
+   
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
 %----------------------------------
 
 
