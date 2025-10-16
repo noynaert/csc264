@@ -1,0 +1,31 @@
+GAS LISTING prog.s 			page 1
+
+
+   1              	/*
+   2              	     Demonstrates use of puts
+   3              	
+   4              	      gcc -g -Wa,-al -o start.exe  start.s > start.lst && ./start.exe
+   5              	      -or-
+   6              	      gcc start.s && ./a.out
+   7              	*/
+   8              	
+   9              	.globl main
+  10              	
+  11              	.data
+  12 0000 486F6C61 	   message: .asciz "Hola."
+  12      2E00
+  13              	
+  14              	.text
+  15              	main:
+  16 0000 48C7C700 	  mov  $message, %rdi          # Address of message into %rdi
+  16      000000
+  17 0007 E8000000 	  call puts                    # puts(message)
+  17      00
+  18 000c 4989C7   	  movq %rax, %r15               # save the return value  
+  19              	
+  20              	_exit:
+  21 000f 48C7C03C 	  movq $60, %rax
+  21      000000
+  22 0016 4C89FF   	  movq %r15, %rdi
+  23 0019 0F05     	  syscall
+  24              	
