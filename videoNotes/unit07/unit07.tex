@@ -1,4 +1,3 @@
-
 %!TEX program = xelatex
 \documentclass[letterpaper,12pt]{exam}
 \usepackage{../videoNotes}
@@ -23,20 +22,119 @@
 
 %\underconstruction
 
-\section*{\unit\_010 -- Suggestions}
 \par{\fontfamily{qzc}\selectfont\textbf{}}
 \begin{questions}
 
+\section*{\unit\_010 -- C Functions }
 \begin{samepage}
-    \question What is a \texttt{\textbf{.section}}?
+    \question Why is C a "low level, high level language?"
     \vspace{5mm}
 \end{samepage}
+\par
 \begin{samepage}
-    \question What is the difference between "\texttt{\textbf{.section .data}}" and just "\texttt{\textbf{.data}}?"
+    \question What does the following code mean in C?  How many bytes would be needed (remember to include the null character)
+\begin{verbatim}
+    char * s = "Hello"
+\end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question  Write the assembler code in the .data section that would create the equivalent of \texttt{\textbf{char * s = "Hello"}}. It was not covered explicitly in the video, but you should be able to figure out the answer.
+     \vspace{15mm}
+ \end{samepage}
+ \par
+\begin{samepage}
+    \question What does the puts command do?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question What is \%d in the printf function?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  \begin{samepage}
+      \question What is \%x in the printf statement?
+      \vspace{5mm}
+  \end{samepage}
+  \par
+   \begin{samepage}
+       \question How can the \%x format specifier be used so that it is clear the output is in hex?
+       \vspace{5mm}
+   \end{samepage}
+   \par
+    
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_020 -- Farewell, start }
+
+\begin{samepage}
+    \question What command may be used for linking to replace the \texttt{\textbf{ld}} command?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What label needs to be changed in order to use \texttt{\textbf{gcc}} as a linker?
     \vspace{5mm}
 \end{samepage}
 \par
  
+\begin{samepage}
+    \question What else can gcc with assembler in addition to linking?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the command you would use to assemble and link your program?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question What is gasm?   
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  \begin{samepage}
+      \question In software development, do you need to dig through documentation yourself, or can you depend on Google and AI to do the searching for you?
+      \vspace{5mm}
+  \end{samepage}
+  \par
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_030 -- puts }
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length 8:00}}
+\begin{samepage}
+    \question What does the \texttt{\textbf{puts}} function do in C?  How many arguments does \texttt{\textbf{puts}} take?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How are parameters passed to functions in x86-64 assembler?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question What is the order of register use for sending arguments to function calls?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Assume the a variable called \texttt{\textbf{sentence}} is defined as a null terminated string.  Write the code needed to call puts from assembler.  Do not worry about the return value.
+    \vspace{35mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question What does the \$ mean in \texttt{\textbf{movq $message, rdi}}?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+
 %----------------------------------
 
 

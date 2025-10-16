@@ -1,4 +1,3 @@
-
 %!TEX program = xelatex
 \documentclass[letterpaper,12pt]{exam}
 \usepackage{../videoNotes}
@@ -15,6 +14,7 @@
 \begin{document}
 \section*{\unit}
 \vspace{10mm}
+\section*{Syscall}
 \begin{tabular}{| c | c | c | c| c |}
  \hline
     rax & System Call & rdi & rsi & rdx \\
@@ -27,6 +27,15 @@
     \hline
 \end{tabular}
 \par
+
+\section*{Calling C library functions}
+\begin{itemize}
+    \item Parameters are stored in registers in the following order: rdi, rsi, rdx, rcx, r8, r9. (If there are more parameters, they are pushed onto the stack)
+    \item Most C functions return an integer or a pointer (which is just an integer).  The return value is placed in the rax register
+    \item The called functions may use or destroy the content of the following registers: rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11 
+    \item Other registers may be used, but the called function is responsible for saving them.
+\end{itemize}
+
 \newpage
 \vspace{0.5in}
 The following is probably a placeholder, and it won't show up on the exam version.\\
@@ -50,6 +59,9 @@ The following is probably a placeholder, and it won't show up on the exam versio
     \hline
 \end{tabular}
    \twocolumn
+
+abcdef
+
 \begin{center}
 \begin{tabular}{| c | c | c |}
     \hline

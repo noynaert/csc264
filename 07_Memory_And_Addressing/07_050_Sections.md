@@ -1,4 +1,4 @@
-# 07.010 Sections
+# 07.050 Sections
 
 This unit covers Chapter 06 from the textbook
 

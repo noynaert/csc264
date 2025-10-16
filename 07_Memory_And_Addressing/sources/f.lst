@@ -1,0 +1,44 @@
+GAS LISTING f.s 			page 1
+
+
+   1              	/*
+   2              	     Demonstrates use of printf
+   3              	
+   4              	     Use gcc to assemble and link
+   5              	     */
+   6              	
+   7              	.globl main
+   8              	
+   9              	.data
+  10 0000 41000000 	     number: .quad 65
+  10      00000000 
+  11 0008 486F6C61 	     message: .asciz "Hola"
+  11      00
+  12 000d 54686520 	     format:  .asciz "The number is %d. In hex, this would be 0x%x.\n%s.\n"
+  12      6E756D62 
+  12      65722069 
+  12      73202564 
+  12      2E20496E 
+  13              	
+  14              	.text
+  15              	main:
+  16              	    #printf("The number is %d.\n", number);
+  17 0000 4831C0   	    xor %rax, %rax
+  18 0003 48C7C700 	    movq $format, %rdi
+  18      000000
+  19 000a 488B3425 	    movq number, %rsi
+  19      00000000 
+  20 0012 488B1425 	    movq number, %rdx
+  20      00000000 
+  21 001a 48C7C100 	    movq $message, %rcx
+  21      000000
+  22 0021 E8000000 	    call printf
+  22      00
+  23              	
+  24              	_exit:
+  25 0026 48C7C03C 	  movq $60, %rax
+  25      000000
+  26 002d 48C7C700 	  movq $0, %rdi
+  26      000000
+  27 0034 0F05     	  syscall
+  28              	

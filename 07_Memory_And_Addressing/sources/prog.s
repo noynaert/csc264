@@ -13,9 +13,9 @@
 
 .text
 main:
-  mov  $message, %rdi          # Address of message into %rdi
-  call puts                    # puts(message)
-  movq %rax, %r15               # save the return value  
+  movq $message, %rdi   # put the ADDRESS of the message in rdi
+  call puts             # make the call to puts
+  movq %rax, %r15       # save the value returned, just for fun.
 
 _exit:
   movq $60, %rax

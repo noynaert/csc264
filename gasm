@@ -19,7 +19,7 @@ source="$f.$ASM"
 echo "Processing $f as $source"
 if [ -f $f.o ]; then rm $f.o; fi
 if [ -f $f.lst ]; then rm $f.lst; fi
-#if [ -f $f ]; then rm $f; fi
+if [ -f $f.exe ]; then rm $f.exe; fi
 
 clear
 if [ -f $source ];
@@ -33,21 +33,17 @@ fi
 object=$f.o
 if [ -f $source ]; 
 then
-  as   -al --gstabs -o $object   $source > $f.lst 2>&1
+  gcc -g  -Wa,-al  -o $f.exe   $source > $f.lst 2>&1
   code=$?
   if [ $code -ne 0 ];then
      echo "Assembler ended with error code $code" | lolcat
   fi 
   if [ -f $f.lst ]; then cat $f.lst; fi
-  if [ -f $object ]; then ld -o $f$EXE $object >> $f.lst 2>&1; fi
-  code=$?
-  if [ $code -ne 0 ];then
-     echo "Linker ended with error code $code" | lolcat
-  fi 
   if [ -f $f$EXE ]; then
    echo "Compile and link successful"
-   echo "Running..."
-   ./$f$EXE
+   echo "Running..................."
+   ./$f$EXE  
+   echo ".........................."
    code=$?
    echo "Exit code for the program is $code" | lolcat
    # The following was added todemonstrate printf.   I suggest you remove it.
