@@ -69,3 +69,24 @@ Include comments in your code.  I will deduct points for lack of comments.
 	12. increment the `%rsi`
 	13. decrement the counting register
 	14. jump not zero to the top of the loop
+
+## Suggested test data:
+
+I stuck "pwd" at the end of each string to serve as a command to keep the operating system happy.  "pwd" prints the present working direction which is only one line of output.
+
+- 123pwd
+- 7pwd
+- 01234pwd
+- 1000pwd
+- 999lpwd
+- 000pwd
+- 000123000pwd
+- pwd
+- 32768pwd
+- 1234567890pwd
+- 0123456789pwd
+- 01234567899pwd  (produces a 9pwd as a bad command)
+
+## For overachievers only:
+
+Add a step that discards all the digits after an invalid number is added.  Then you don't need to append something lie pwd to each command.
