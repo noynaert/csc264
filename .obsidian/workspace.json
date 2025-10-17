@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_Memory_And_Addressing/07_020_Goodbye_start_we_hardly_knew_ye.md",
+                "file": "07_Memory_And_Addressing/hmwk07.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07_020_Goodbye_start_we_hardly_knew_ye"
+              "title": "hmwk07"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5026054382324
+    "width": 292.5026054382324,
+    "collapsed": true
   },
   "right": {
     "id": "fd94b32ed11930e8",
@@ -171,20 +172,22 @@
   },
   "active": "c58bf9e4a2f0c7d1",
   "lastOpenFiles": [
+    "00_Getting_Started/00_070_x86_Assembler.md",
+    "07_Memory_And_Addressing/hmwk07.md",
+    "07_Memory_And_Addressing/07_040_printf.md",
+    "00_Getting_Started/sourceCode/README.md",
+    "07_Memory_And_Addressing/07_020_Goodbye_start_we_hardly_knew_ye.md",
     "videoNotes/unit07/unit07.synctex(busy)",
     "videoNotes/unit07/unit07.out",
     "videoNotes/unit07/unit07.aux",
-    "07_Memory_And_Addressing/07_040_printf.md",
     "07_Memory_And_Addressing/07_030_puts.md",
     "07_Memory_And_Addressing/sources/f.exe",
     "07_Memory_And_Addressing/sources/f.lst",
     "07_Memory_And_Addressing/sources/f.s",
-    "07_Memory_And_Addressing/07_020_Goodbye_start_we_hardly_knew_ye.md",
     "07_Memory_And_Addressing/sources/a.out",
     "07_Memory_And_Addressing/sources/prog.exe",
     "07_Memory_And_Addressing/sources/prog.lst",
     "gasm",
-    "07_Memory_And_Addressing/sources/prog.o",
     "07_Memory_And_Addressing/07_010_C_Functions_in_Unix.md",
     "07_Memory_And_Addressing/07_050_Sections.md",
     "07_Memory_And_Addressing/07_060_CallingCFunctions.md",
