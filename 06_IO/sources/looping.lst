@@ -1,0 +1,36 @@
+GAS LISTING looping.s 			page 1
+
+
+   1              	 /*
+   2              	   Illustrates looping through a buffer with counting
+   3              	   Also, only processes a range.  It 
+   4              	
+   5              	   file: looping.s
+   6              	
+   7              	   compiles and links with gcc.  
+   8              	   Change "main" to "_start" if using as and ld
+   9              	
+  10              	          Registers: 
+  11              	             r15 -- Loop counter
+  12              	             rsi -- Used to point to the next character to print (Not just for syscalls)
+  13              	
+  14              	*/
+  15              	
+  16              	.globl main
+  17              	.data
+  18 0000 28486F77 	      buffer: .ascii "(How), Now, \n[BrOwN] {CoW}!~@.123"
+  18      292C204E 
+  18      6F772C20 
+  18      0A5B4272 
+  18      4F774E5D 
+  19              	  
+  20              	
+  21              	.text
+  22              	main:
+  23              	
+  24              	_exit:
+  25 0000 48C7C03C 	  movq $60, %rax
+  25      000000
+  26 0007 4C89FF   	  movq %r15, %rdi
+  27 000a 0F05     	  syscall
+  28              	
