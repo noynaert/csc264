@@ -26,21 +26,22 @@ Include comments in your code.  I will deduct points for lack of comments.
 
 ## Recommended steps.
 
-1. Figure out what registers and variables you need. you need (other than the standard `syscall` and `call` register).  
-		- I used 3, although I could have gotten by without the third one:
-			1. A counter for the length of the string
-			2. A register to hold a 10 as a multiplier
-			3. I used a temporary register to hold the character when I subtracted to 48, but I could have gotten by without it.
-	- I used the following variables:
-		1. A buffer in `.bss` area
-		2. bufferN contained the number of digits
-		3. maxLength held 10
-		4. prompt held the prompt "Enter a number: "
-		5. promptN The number of bytes in the prompt
-		6. format the format string stored as null-terminated ASCII (.asciz)  My string was "\nThe number is %d.  In hex, this would be 0x%x.\n"
-	2. Print the prompt.  I used `syscall` for this output because I wanted the cursor to stay on the same line.
-	3. Read the keyboard into the buffer.  This will be a loop.  Exit if a non-digit is entered or if there are more than 10 digits
-	4. I used syscall to print the string.  This was just for debugging.  When I was done, I jumped around the code. 
+* Figure out what registers and variables you need. you need (other than the standard `syscall` and `call` register).  
+	- I used 3, although I could have gotten by without the third one:
+    	* A counter for the length of the string
+    	* A register to hold a 10 as a multiplier
+    	* I used a temporary register to hold the character when I subtracted to 48, but I could have gotten by without it.
+- I used the following variables:
+	* A buffer in `.bss` area
+	* bufferN contained the number of digits
+	* maxLength held 10
+	* prompt held the prompt "Enter a number: "
+	* promptN The number of bytes in the prompt
+	* format the format string stored as null-terminated ASCII (.asciz)  My string was "&bsol;nThe number is %d.  In hex, this would be 0x%x.&bsol;n"
+* Print the prompt.  I used `syscall` for this output because I wanted the cursor to stay on the same line.
+* Read the keyboard into the buffer.  This will be a loop.  Exit if a non-digit is entered or if there are more than 10 digits
+* I used syscall to print the string.  This was just for debugging.  When I was done, I jumped around the code.
+    
 		```
 		# write the string for debugging
         jmp _no_debug       
@@ -51,24 +52,25 @@ Include comments in your code.  I will deduct points for lack of comments.
         syscall
         _no_debug
 		```
-	5. Figure out what number is in the buffer.  This was one of the last things I did.  I will explain the algorithm below.
-	6. `cal Printf` the number.
- 
-	### Algorithm for converting string in `buffer` to value in `number`.  I used `r13` to do the calculations
 
-	2. Put  `bufferN` into the counting register  # We will count down to zero to control the loop.
-	3. put address of the buffer into `%rsi`
-	4. put a 10 (the multiplier) in a register
-	5. clear the `%rax` with xor
-	6. TOP OF LOOP GOES HERE
-	7. multiply `%rax` by 10
-	8. clear `%r13` with xor
-	9. move `(%rsi)` to `r13b` # move the character pointed to by %rsi to %r13b
-	10. subtract 48 from %r13b
-	11. add  `%r13` to the `%rax`
-	12. increment the `%rsi`
-	13. decrement the counting register
-	14. jump not zero to the top of the loop
+* Figure out what number is in the buffer.  This was one of the last things I did.  I will explain the algorithm below.
+* `call Printf` the number.
+ 
+### Algorithm for converting string in `buffer` to value in `number`.  I used `r13` to do the calculations
+
+* Put  `bufferN` into the counting register  # We will count down to zero to control the loop.
+* put address of the buffer into `%rsi`
+* put a 10 (the multiplier) in a register
+* clear the `%rax` with xor
+* TOP OF LOOP GOES HERE
+	1.  multiply `%rax` by 10
+	2.  clear `%r13` with xor
+	3.  move `(%rsi)` to `r13b` # move the character pointed to by %rsi to %r13b
+	4.  subtract 48 from %r13b
+	5.  add  `%r13` to the `%rax`
+	6.  increment the `%rsi`
+	7.  decrement the counting register
+	8.  jump not zero to the top of the loop
 
 ## Suggested test data:
 
