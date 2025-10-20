@@ -7,20 +7,19 @@
 \usepackage{soul}
 \usepackage{draftwatermark}
 \usepackage{multicol}
-\usepackage[margin=2.0cm]{geometry}
+\usepackage[margin=5mm]{geometry}
+\usepackage{fontspec}
+\usepackage{tabulary}
+\setmainfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
 \SetWatermarkText{DRAFT}
 \SetWatermarkScale{1.5}
 \SetWatermarkColor{red!20}
 \newcommand{\unit}{Exam 2 Cheatsheet}
 \pagestyle{headandfoot}
-
 \begin{document}
 \section*{\unit}
-\vspace{10mm}
-%\begin{multicols*}{2}
-\begin{minipage}[t]{0.6\textwidth}
 \section*{Syscall}
-
 \begin{tabular}{| c | c | c | c| c |}
  \hline
     rax & System Call & rdi & rsi & rdx \\
@@ -44,41 +43,45 @@
 
 \end{itemize}
 \par
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.3\textwidth}
-\begin{figure}[H]
-  \centering
-    \includegraphics[width=2.87cm]{../../02_Registers/images/X86_64-GP-registersBIG.png}
-\end{figure}
-\end{minipage}
-%\end{multicols*}
+
+\begin{center}
+\begin{tabulary}{\textwidth}{C C C C C C C}
+\multicolumn{7}{c}{{\huge General Purpose Registers}}\\
+64-bit & 32-bit & 16-bit & 8-bit low & 8-bit high & Calling Convention & May be destroyed by called~function?\\
+\hline
+rax & eax & ax & al & ah & Return Val/Accum & Yes \\
+rbx & ebx & bx & bl & bh & --- & No \\
+rcx & ecx & cx & cl & ch & 4th argument & Yes \\
+rdx & edx & dx & dl & dh & 3rd argument & Yes \\
+\hline
+rsi & esi & si & sil & -- & 2nd argument & Yes \\
+rdi & edi & di & dil & -- & 1st argument & Yes \\
+\hline
+r8 & r8d & r8w & r8b & -- & 5th argument & Yes \\
+r9 & r9d & r9w & r9b & -- & --- & Yes \\
+r10 & r10d & r10w & r10b & -- & --- & Yes \\
+r11 & r11d & r11w & r11b & -- & --- & Yes \\
+r12 & r12d & r12w & r12b & -- & --- & No \\
+r13 & r13d & r13w & r14b & -- & --- & No \\
+r14 & r14d & r14w & r14b & -- & --- & No \\
+r15 & r15d & r15w & r15b & -- & --- & Yes \\
+\end{tabulary}
+\par 
+\vspace{10 mm}
+\begin{tabulary}{\textwidth}{L C C C C C}
+\multicolumn{6}{c}{{\huge Special Purpose Registers}}\\
+Register & 64-bit & 32-bit & 16-bit & 8-bit low & May be destroyed by called function?\\
+\hline
+\textbf{Stack Pointer} & rsp & esp & sp & spl & No \\
+\textbf{Base Pointer} & rbp & ebp & bp & bpl & No \\
+\textbf{Instruction Pointer} & rip & eip & ip & -- & \  \\
+\textbf{Flags and Conditions} & rflags & eflags & flags & -- & Yes\\
+\end{tabulary}
+\end{center}
+
 \newpage
-\vspace{0.5in}
-The following is probably a placeholder, and it won't show up on the exam version.\\
-\begin{tabular}{|c|c|c|c|}
-    \hline
-   function & arguments & return value & notes\\    
-    \hline
-    puts & char *s & size\_t length & does not count null byte \\
-    \hline
-    strcpy & char *dest, char *src & char *dest & dest must be big enough \\
-    \hline
-    strncmp & char *s1, char *s2, size\_t n & int & 0 if equal, $<$0 if s1<s2, $>$0 if s1>s2 \\
-    \hline
-    strncpy & char *dest, char *src, size\_t n & char *dest & dest must be big enough \\
-    \hline
-    strcat & char *dest, char *src & char *dest & dest must be big enough \\
-    \hline
-    strncat & char *dest, char *src, size\_t n & char *dest & dest must be big enough \\
-    \hline
-    strcmp & char *s1, char *s2 & int & 0 if equal, $<$0 if s1<s2, $>$0 if s1>s2 \\
-    \hline
-\end{tabular}
-   \twocolumn
-
-abcdef
-
+\twocolumn
+This is the cheatsheet from the first exam.  It probably will not be on the second exam.
 \begin{center}
 \begin{tabular}{| c | c | c |}
     \hline
@@ -163,5 +166,28 @@ $16 \cdot 15 $  (f) & $ 240 $ \\
 
 %\includegraphics[height=8in]{../../02}
 \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.5in}
+The following is probably a placeholder, and it won't show up on the exam version.\\
+\begin{tabular}{|c|c|c|c|}
+    \hline
+   function & arguments & return value & notes\\    
+    \hline
+    puts & char *s & size\_t length & does not count null byte \\
+    \hline
+    strcpy & char *dest, char *src & char *dest & dest must be big enough \\
+    \hline
+    strncmp & char *s1, char *s2, size\_t n & int & 0 if equal, $<$0 if s1<s2, $>$0 if s1>s2 \\
+    \hline
+    strncpy & char *dest, char *src, size\_t n & char *dest & dest must be big enough \\
+    \hline
+    strcat & char *dest, char *src & char *dest & dest must be big enough \\
+    \hline
+    strncat & char *dest, char *src, size\_t n & char *dest & dest must be big enough \\
+    \hline
+    strcmp & char *s1, char *s2 & int & 0 if equal, $<$0 if s1<s2, $>$0 if s1>s2 \\
+    \hline
+\end{tabular}
 
 \end{document} 
