@@ -1,10 +1,13 @@
 %!TEX program = xelatex
 \documentclass[letterpaper,12pt]{exam}
 \usepackage{../videoNotes}
+\usepackage{float}
 \usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{soul}
 \usepackage{draftwatermark}
+\usepackage{multicol}
+\usepackage[margin=2.0cm]{geometry}
 \SetWatermarkText{DRAFT}
 \SetWatermarkScale{1.5}
 \SetWatermarkColor{red!20}
@@ -14,7 +17,10 @@
 \begin{document}
 \section*{\unit}
 \vspace{10mm}
+%\begin{multicols*}{2}
+\begin{minipage}[t]{0.6\textwidth}
 \section*{Syscall}
+
 \begin{tabular}{| c | c | c | c| c |}
  \hline
     rax & System Call & rdi & rsi & rdx \\
@@ -27,15 +33,26 @@
     \hline
 \end{tabular}
 \par
-
 \section*{Calling C library functions}
+
 \begin{itemize}
     \item Parameters are stored in registers in the following order: rdi, rsi, rdx, rcx, r8, r9. (If there are more parameters, they are pushed onto the stack)
     \item Most C functions return an integer or a pointer (which is just an integer).  The return value is placed in the rax register
     \item The called functions may use or destroy the content of the following registers: rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11 
     \item Other registers may be used, but the called function is responsible for saving them.
-\end{itemize}
+\vspace{15 mm}
 
+\end{itemize}
+\par
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=2.87cm]{../../02_Registers/images/X86_64-GP-registersBIG.png}
+\end{figure}
+\end{minipage}
+%\end{multicols*}
 \newpage
 \vspace{0.5in}
 The following is probably a placeholder, and it won't show up on the exam version.\\
@@ -141,7 +158,7 @@ $16 \cdot 15 $  (f) & $ 240 $ \\
 \end{center}
 
 \begin{center}
-    \includegraphics[height=9in]{../../02_Registers/images/X86_64-GP-registersBIG.png}
+\includegraphics[height=9in]{../../02_Registers/images/X86_64-GP-registersBIG}
     
 
 %\includegraphics[height=8in]{../../02}
