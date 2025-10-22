@@ -26,11 +26,49 @@
 
 \section*{\unit\_010 -- Declaring multiples }
 \begin{samepage}
-    \question Why?
+    \question What is an address?
     \vspace{5mm}
 \end{samepage}
 \par
+\begin{samepage}
+    \question In the listing we see text like the following.  If we execute the program, will char3 be loaded at location 0003 in physical memory?  Explain.
+\begin{verbatim}
+    0003 43                char3: .byte 67  # same as 0x43
+\end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question We have been using the term "variable" this semester.  How are they similar to the idea of a variable in a high level language?  How are they different? (I did not cover this explicitly in the video.  Think about it.)
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    \question What does \$ mean when it appears before a label?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What does it mean when a register appears in (parenthesis)?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question How are the \$ and () compliments of each other?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+\begin{samepage}
+    \question Explain the difference between the following two lines of code.  What would be loaded into the register in each?  Also, why doesn't (\%rdx) change?
+    \begin{verbatim}
+   movb (%rbx), %dil
+   movq (%rbx), %rdi
 
+    \end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+   
+ 
 
 
 

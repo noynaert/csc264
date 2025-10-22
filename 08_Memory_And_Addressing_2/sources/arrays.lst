@@ -2,26 +2,41 @@ GAS LISTING arrays.s 			page 1
 
 
    1              	/*
-   2              	   Illustrates picking variables
+   2              	   Creating Arrays
    3              	*/
    4              	
    5              	.globl main
    6              	.data
-   7 0000 40       	    char0: .byte 64  # same as 0x40
+   7 0000 40       	    char:  .byte 64  # same as 0x40
    8 0001 41       	           .byte 65  # same as 0x41
    9 0002 42       	           .byte 66  # same as 0x42
   10 0003 43       	           .byte 67  # same as 0x43
   11 0004 44       	           .byte 68  # same as 0x44
   12 0005 00       	           .byte  0  # Null terminated
-  13 0006 06000000 	    char0N:.quad .-char0
+  13 0006 06000000 	    charN: .quad .-char
   13      00000000 
-  14              	
-  15              	.text
-  16              	main:
-  17              	
-  18              	_exit:
-  19 0000 48C7C03C 	   movq $60,  %rax
-  19      000000
-  20 0007 4831FF   	   xor  %rdi, %rdi
-  21 000a 0F05     	   syscall
+  14 000e 63617400 	    animal:.byte  99,97,'t',0
+  15 0012 04000000 	    animalN:.quad .-animal
+  15      00000000 
+  16              	
+  17 001a D4052A04 	    number:  .word   1492, 1066, 1776, 1945
+  17      F0069907 
+  18 0022 0800     	    numberN: .word   .-number
+  19 0024 2A040000 	    bigNum:  .quad   1066, 1492, 1945, 2020
+  19      00000000 
+  19      D4050000 
+  19      00000000 
+  19      99070000 
+  20 0044 20000000 	    bigNumN: .quad   .-bigNum
+  20      00000000 
+  21              	
   22              	
+  23              	.text
+  24              	main:
+  25              	
+  26              	_exit:
+  27 0000 48C7C03C 	   movq $60,  %rax
+  27      000000
+  28 0007 4831FF   	   xor  %rdi, %rdi
+  29 000a 0F05     	   syscall
+  30              	
