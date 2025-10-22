@@ -1,0 +1,37 @@
+GAS LISTING addresses.s 			page 1
+
+
+   1              	/*
+   2              	   Illustrates picking variables
+   3              	*/
+   4              	
+   5              	.globl main
+   6              	.data
+   7 0000 40       	    char0: .byte 64
+   8 0001 41       	           .byte 65
+   9 0002 42       	           .byte 66
+  10 0003 43       	           .byte 67
+  11 0004 44       	    char4: .byte 68
+  12 0005 5A000000 	    number: .quad 90     #should be z
+  12      00000000 
+  13 000d 67666564 	    eightLetters: .quad 0x6061626364656667
+  13      63626160 
+  14 0015 70657269 	    word: .asciz "periwinkle"
+  14      77696E6B 
+  14      6C6500
+  15 0020 20446563 	    format: .asciz " Decimal: %d  Hex: 0x%x Char: %c\n"
+  15      696D616C 
+  15      3A202564 
+  15      20204865 
+  15      783A2030 
+  16              	.text
+  17              	main:
+  18              	
+  19              	
+  20              	_exit:
+  21 0000 48C7C03C 	   movq $60, %rax
+  21      000000
+  22 0007 48C7C763 	   movq $99, %rdi
+  22      000000
+  23 000e 0F05     	   syscall
+  24              	
