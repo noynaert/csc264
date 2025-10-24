@@ -1,0 +1,61 @@
+070_RIP_Relative.s: Assembler messages:
+070_RIP_Relative.s:15: Error: junk `(%rip)' after expression
+070_RIP_Relative.s:15: Error: junk `(%rip)' after expression
+070_RIP_Relative.s:21: Error: junk `(rip)' after expression
+070_RIP_Relative.s:21: Error: junk `(rip)' after expression
+GAS LISTING 070_RIP_Relative.s 			page 1
+
+
+   1              	/*
+   2              	   calculating  loop through quad array
+   3              	*/
+   4              	
+   5              	.globl main
+   6              	.data
+   7 ???? 2A040000 	    years: .quad  1066, 1776, 1865, 1918, 1945, 2020, 2025
+   7      00000000 
+   7      F0060000 
+   7      00000000 
+   7      49070000 
+   8 ???? 06000000 	    yearsN:.quad  6
+   8      00000000 
+   9 ???? 54686520 	    format:   .asciz "The [%d] year is %d.\n"
+   9      5B25645D 
+   9      20796561 
+   9      72206973 
+   9      2025642E 
+  10              	
+  11              	.text
+  12              	main:
+  13              	
+  14 ???? 49C7C600 	  movq $0, %r14
+  14      000000
+  15 ???? 49C7C700 	  movq $years(%rip),%r15
+****  Error: junk `(%rip)' after expression
+****  Error: junk `(%rip)' after expression
+  15      000000
+  16              	
+  17              	  _printYears:
+  18 ???? 4C3B3500 	  cmpq yearsN(%rip),%r14
+  18      000000
+  19 ???? 741B     	  je _endPrintYears
+  20 ???? 4831C0   	  xor %rax, %rax
+  21 ???? 48C7C700 	  movq $format(rip), %rdi
+****  Error: junk `(rip)' after expression
+****  Error: junk `(rip)' after expression
+  21      000000
+  22 ???? 4C89F6   	  movq %r14, %rsi
+  23 ???? 4B8B14F7 	  movq 0(%r15,%r14,8), %rdx
+  24 ???? E8000000 	  call printf
+  24      00
+  25 ???? 49FFC6   	  inc %r14
+  26 ???? EBDC     	  jmp _printYears
+  27              	
+  28              	  _endPrintYears:
+  29              	
+  30              	_exit:
+  31 ???? 48C7C03C 	   movq $60,  %rax
+  31      000000
+  32 ???? 4831FF   	   xor  %rdi, %rdi
+  33 ???? 0F05     	   syscall
+  34              	

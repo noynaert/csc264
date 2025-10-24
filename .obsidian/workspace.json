@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08_Memory_And_Addressing_2/08_020_Arrays.md",
+                "file": "08_Memory_And_Addressing_2/08_070_RIP_Relative.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08_020_Arrays"
+              "title": "08_070_RIP_Relative"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "path:08_Memory_And_Addressing_2  ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -169,27 +169,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "afb60122869a8740",
+  "active": "c58bf9e4a2f0c7d1",
   "lastOpenFiles": [
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.synctex(busy)",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.out",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.aux",
-    "08_Memory_And_Addressing_2/sources/arrays.exe",
+    "08_Memory_And_Addressing_2/08_055_looping_Characters.md",
+    "08_Memory_And_Addressing_2/08_070_RIP_Relative.md",
+    "08_Memory_And_Addressing_2/08_060_LoopingQuads.md",
+    "08_Memory_And_Addressing_2/08_030_Addressing_Modes.md",
+    "08_Memory_And_Addressing_2/08_040_Memory_Adderessing_Modes.md",
     "videoNotes/unit08/unit08.synctex(busy)",
-    "08_Memory_And_Addressing_2/sources/arrays.lst",
-    "08_Memory_And_Addressing_2/sources/arrays.s",
+    "videoNotes/unit08/unit08.out",
+    "videoNotes/unit08/unit08.aux",
+    "08_Memory_And_Addressing_2/sources/070_RIP_Relative.exe",
+    "08_Memory_And_Addressing_2/sources/070_RIP_Relative.lst",
+    "08_Memory_And_Addressing_2/sources/070_RIP_Relative.s",
+    "08_Memory_And_Addressing_2/sources/060_looping_Quads.exe",
+    "08_Memory_And_Addressing_2/08_050_Print_a_Byte_with_Indexing.md",
+    "08_Memory_And_Addressing_2/sources/060_looping_Quads.lst",
+    "08_Memory_And_Addressing_2/sources/060_looping_Quads.s",
+    "08_Memory_And_Addressing_2/sources/060_looping_Quads",
+    "08_Memory_And_Addressing_2/08_020_Arrays.md",
     "08_Memory_And_Addressing_2/08_010_Memory.md",
     "08_Memory_And_Addressing_2/images/movq.png",
     "08_Memory_And_Addressing_2/images/movb.png",
-    "08_Memory_And_Addressing_2/images",
     "07_Memory_And_Addressing/hmwk07.md",
     "00_Getting_Started/00_070_x86_Assembler.md",
     "07_Memory_And_Addressing/07_040_printf.md",
     "00_Getting_Started/sourceCode/README.md",
     "07_Memory_And_Addressing/07_020_Goodbye_start_we_hardly_knew_ye.md",
-    "videoNotes/unit07/unit07.synctex(busy)",
-    "videoNotes/unit07/unit07.out",
-    "videoNotes/unit07/unit07.aux",
     "07_Memory_And_Addressing/07_030_puts.md",
     "07_Memory_And_Addressing/07_010_C_Functions_in_Unix.md",
     "07_Memory_And_Addressing/07_050_Sections.md",
@@ -203,11 +209,6 @@
     "06_IO/06_010_Syscall.md",
     "06_IO/06_005_Syntax.md",
     "05_Comparisons/05_050_Comparisons.md.md",
-    "05_Comparisons/05_040_if_else.md.md",
-    "05_Comparisons/tmp/05_050_Loops.md",
-    "05_Comparisons/05_030_if.md.md",
-    "05_Comparisons/05_020_Masking.md",
-    "05_Comparisons/05_015_Structured_Programming.md.md",
-    "05_Comparisons/05_010_SpaghettiBowlProgramming.md"
+    "05_Comparisons/05_040_if_else.md.md"
   ]
 }

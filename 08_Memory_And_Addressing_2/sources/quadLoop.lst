@@ -1,0 +1,74 @@
+GAS LISTING quadLoop.s 			page 1
+
+
+   1              	/*
+   2              	   calculating addresses
+   3              	*/
+   4              	
+   5              	.globl main
+   6              	.data
+   7 0000 2A040000 	    years: .quad  1066, 1492, 1776, 2020
+   7      00000000 
+   7      D4050000 
+   7      00000000 
+   7      F0060000 
+   8 0020 04000000 	    yearsN:.quad  4
+   8      00000000 
+   9 0028 54686520 	    format:   .asciz "The year is %d.\n"
+   9      79656172 
+   9      20697320 
+   9      25642E0A 
+   9      00
+  10 0039 02000000 	    index: .quad  2
+  10      00000000 
+  11              	
+  12              	.text
+  13              	main:
+  14              	//    andq  $-16,%rsp
+  15              	
+  16              	
+  17              	
+  18              	/*
+  19              	    xor %rax, %rax
+  20              	    movq $format,%rdi
+  21              	    movq years,%rsi
+  22              	    call printf
+  23              	*/
+  24              	/*
+  25              	    movq $1,  %r14
+  26              	    movq $years, %r15
+  27              	    xor %rax, %rax
+  28              	    movq $format, %rdi
+  29              	    #movq years,%rsi
+  30              	    movq 8(%r15,%r14,8), %rsi
+  31              	    call printf
+  32              	*/
+  33 0000 49C7C600 	    movq $0, %r14    # INDEX of the loop in r14
+  33      000000
+  34 0007 49C7C700 	    movq $years,%r15 # BASE of the array
+  34      000000
+  35              	
+  36              	    _printLoop:
+  37 000e 4C3B3425 	    cmpq yearsN,%r14
+  37      00000000 
+  38 0016 7418     	    je _endPrintLoop
+  39 0018 4831C0   	    xor %rax, %rax
+  40 001b 48C7C700 	    movq $format,%rdi
+  40      000000
+  41 0022 4B8B34F7 	    movq (%r15,%r14,8), %rsi
+  42 0026 E8000000 	    call printf
+  42      00
+GAS LISTING quadLoop.s 			page 2
+
+
+  43 002b 49FFC6   	    inc %r14
+  44 002e EBDE     	    jmp _printLoop
+  45              	    _endPrintLoop:
+  46              	
+  47              	
+  48              	_exit:
+  49 0030 48C7C03C 	   movq $60,  %rax
+  49      000000
+  50 0037 4831FF   	   xor  %rdi, %rdi
+  51 003a 0F05     	   syscall
+  52              	

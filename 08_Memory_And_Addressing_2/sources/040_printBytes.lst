@@ -1,0 +1,64 @@
+GAS LISTING 040_printBytes.s 			page 1
+
+
+   1              	/*
+   2              	   calculating addresses
+   3              	*/
+   4              	
+   5              	.globl main
+   6              	.data
+   7 0000 646F6700 	    animal:.asciz "dog"
+   8 0004 54686520 	    format:.asciz "The char is \'%c\'.\n"
+   8      63686172 
+   8      20697320 
+   8      27256327 
+   8      2E0A00
+   9              	
+  10              	
+  11              	.text
+  12              	main:
+  13              	   #Print one char with the label (review)
+  14              	   /*
+  15              	   xor  %rax, %rax
+  16              	   movq $format,%rdi
+  17              	   movb animal, %sil
+  18              	   call printf
+  19              	   */
+  20              	   #Print one character with a calculated address
+  21              	   #Use r15 as the base address of the buffer
+  22              	   #Use r14 as the index
+  23 0000 49C7C700 	   movq $animal, %r15
+  23      000000
+  24 0007 49C7C600 	   movq $0, %r14
+  24      000000
+  25              	
+  26              	   #do the printing with index of 0
+  27 000e 4831C0   	   xor %rax, %rax
+  28 0011 48C7C700 	   movq $format, %rdi
+  28      000000
+  29 0018 438A3437 	   movb (%r15,%r14), %sil
+  30 001c E8000000 	   call printf
+  30      00
+  31              	
+  32              	   #do the printing with index of 2
+  33 0021 49C7C700 	   movq $animal, %r15
+  33      000000
+  34 0028 49C7C602 	   movq $2, %r14
+  34      000000
+  35 002f 4831C0   	   xor %rax, %rax
+  36 0032 48C7C700 	   movq $format, %rdi
+  36      000000
+  37 0039 438A3437 	   movb (%r15,%r14), %sil
+  38 003d E8000000 	   call printf
+  38      00
+  39              	
+  40              	
+  41              	_exit:
+  42 0042 48C7C03C 	   movq $60,  %rax
+  42      000000
+  43 0049 4831FF   	   xor  %rdi, %rdi
+  44 004c 0F05     	   syscall
+GAS LISTING 040_printBytes.s 			page 2
+
+
+  45              	

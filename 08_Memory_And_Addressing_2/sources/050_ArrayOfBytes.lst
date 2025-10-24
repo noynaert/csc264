@@ -1,0 +1,46 @@
+GAS LISTING 050_ArrayOfBytes.s 			page 1
+
+
+   1              	/*
+   2              	   Print Array of bytes
+   3              	*/
+   4              	
+   5              	.globl main
+   6              	.data
+   7 0000 54686520 	    format:.asciz "The char is \'%c\'.\n"
+   7      63686172 
+   7      20697320 
+   7      27256327 
+   7      2E0A00
+   8 0013 736B756E 	    animal:.ascii "skunk","\0"
+   8      6B00
+   9              	
+  10              	
+  11              	.text
+  12              	main:
+  13              	
+  14              	   #do the printing with index of 2
+  15 0000 49C7C700 	   movq $animal, %r15
+  15      000000
+  16 0007 49C7C600 	   movq $0, %r14
+  16      000000
+  17              	   _printAnimal:
+  18 000e 4B833C37 	   cmpq $0,(%r15,%r14)
+  18      00
+  19 0013 7418     	   je  _endPrintAnimal
+  20 0015 4831C0   	   xor %rax, %rax
+  21 0018 48C7C700 	   movq $format, %rdi
+  21      000000
+  22 001f 438A3437 	   movb (%r15,%r14), %sil
+  23 0023 E8000000 	   call printf
+  23      00
+  24 0028 49FFC6   	   inc  %r14
+  25 002b EBE1     	   jmp _printAnimal
+  26              	
+  27              	   _endPrintAnimal:
+  28              	_exit:
+  29 002d 48C7C03C 	   movq $60,  %rax
+  29      000000
+  30 0034 4831FF   	   xor  %rdi, %rdi
+  31 0037 0F05     	   syscall
+  32              	

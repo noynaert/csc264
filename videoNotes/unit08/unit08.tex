@@ -4,6 +4,8 @@
 \usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{soul}
+\usepackage{tabulary}
+\usepackage{fontspec}
 
 \usepackage{draftwatermark}
 \SetWatermarkText{Draft}
@@ -84,14 +86,154 @@
     \vspace{5mm}
 \end{samepage}
 \par
+\begin{samepage}
+    \question For review, fill in the right column of the following table.  
+   \begin{center}
+\begin{tabular}{ |c| c| }
+ size & declaration  \\
+ \hline 
+ {\large 1} & \textcolor{blue}{\casual .byte} \\  
+ {\large 2} &  \\    
+ {\large 4} &  \\
+ {\large 8} &  \\
+\end{tabular}
+\end{center}
+    \vspace{5mm}
+
+\end{samepage}
+\par
+ 
  
    \rule{0.5\textwidth}{.4pt} %End of section
    %----------------------------------
+ \section*{\unit\_ 030 -- Addressing Modes}
+
+\begin{samepage}
+    \question Memory modes are about the \rule{1cm}{0.15mm}\rule{1cm}{0.15mm} of an instruction
+    \vspace{5mm}
+\end{samepage}
+\par
+  \begin{samepage}
+     \question What are the three basic addressing modes?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+
+
+\begin{samepage}
+    \question What is immediate mode?  How can you recognize immediate mode in GAS assembler?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question How do you recognize that an operand is Register mode in GAS assembler?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+\begin{samepage}
+    \question Which of the three modes involves calculation of an address?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question For each of the following, write I for immediate mode, R for register mode, or M for Memory mode.  Assume "number" is a label.
+\begin{itemize}
+    \item \$99
+    \item \%rdx
+    \item (\%rax)
+    \item \$number
+    \item number
+\end{itemize}
+    \vspace{5mm}
+\end{samepage}
+    \rule{0.5\textwidth}{.4pt} %End of section
+ %----------------------------------
+\section*{\unit\_040 -- Memory Addressing Modes}
+\begin{samepage}
+    \question Fill in the blanks in the following:
+    \par
+    $address = \rule{2.5cm}{0.15mm}(\rule{2.5cm}{0.15mm},\rule{2.5cm}{0.15mm},\rule{2.5cm}{0.15mm})$
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Is the value added to or multiplied by the fields in parenthesis
+    \vspace{5mm}
+\end{samepage}
+\par
  
+\begin{samepage}
+    \question In the formula above, which two fields must be registers?
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    \question What values are allowed for the multiplier?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the default number if the value field is omitted? 
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the default number if the basereg field is omitted? 
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    \question What is the default number if the idxreg field is omitted? 
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    \question What is the default number if the multiplier is omitted? 
+    \vspace{5mm}
+\end{samepage}
 
+      
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_050 -- Printing a byte the hard way}
+\begin{samepage}
+    \question What would need to be changed in the following block of code to get it to prink the "n" in skunk?
+\begin{verbatim}
+    .data
+    format:.asciz "The char is \'%c\'.\n"
+    animal:.ascii "skunk","\0"
+.text
+main:
+   movq \$animal, \%r15
+   movq \$0, \%r14
+   xor \%rax, \%rax
+   movq \$format, \%rdi
+   movb (\%r15,\%r14), \%sil
+   call printf
+\end{verbatim}
 
+\end{samepage}
+\par
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_055 -- Printing bytes with a loop }
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question Modify the text part of the code from the previous question so that it will print all of the characters in animal.  Just do the main: label up until the \_exit label.
+    \vspace{65mm}
+\end{samepage}
 
-
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_060 -- Looping Quads }
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question Suppose you want to skip the \[0\] year. Modify the following line of code so that it would skip the first year.
+    \begin{verbatim}
+          movq (\%r15,\%r14,8), %rdx
+    \end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
 
 
 
