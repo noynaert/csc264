@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5026054382324
+    "width": 292.5026054382324,
+    "collapsed": true
   },
   "right": {
     "id": "fd94b32ed11930e8",
@@ -171,12 +172,12 @@
   },
   "active": "c58bf9e4a2f0c7d1",
   "lastOpenFiles": [
+    "videoNotes/unit08/unit08.synctex(busy)",
     "08_Memory_And_Addressing_2/08_055_looping_Characters.md",
     "08_Memory_And_Addressing_2/08_070_RIP_Relative.md",
     "08_Memory_And_Addressing_2/08_060_LoopingQuads.md",
     "08_Memory_And_Addressing_2/08_030_Addressing_Modes.md",
     "08_Memory_And_Addressing_2/08_040_Memory_Adderessing_Modes.md",
-    "videoNotes/unit08/unit08.synctex(busy)",
     "videoNotes/unit08/unit08.out",
     "videoNotes/unit08/unit08.aux",
     "08_Memory_And_Addressing_2/sources/070_RIP_Relative.exe",
@@ -208,7 +209,6 @@
     "06_IO/06_020_Write.md",
     "06_IO/06_010_Syscall.md",
     "06_IO/06_005_Syntax.md",
-    "05_Comparisons/05_050_Comparisons.md.md",
-    "05_Comparisons/05_040_if_else.md.md"
+    "05_Comparisons/05_050_Comparisons.md.md"
   ]
 }

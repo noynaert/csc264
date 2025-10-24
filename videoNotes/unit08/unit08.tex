@@ -7,10 +7,10 @@
 \usepackage{tabulary}
 \usepackage{fontspec}
 
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft}
-\SetWatermarkScale{1.5}
-\SetWatermarkColor{red!20}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft}
+%\SetWatermarkScale{1.5}
+%\SetWatermarkColor{red!20}
 
 \newcommand{\unit}{Unit 08}
 \pagestyle{headandfoot}
@@ -223,7 +223,6 @@ main:
 \rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
 \section*{\unit\_060 -- Looping Quads }
-\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
 \begin{samepage}
     \question Suppose you want to skip the \[0\] year. Modify the following line of code so that it would skip the first year.
     \begin{verbatim}
@@ -235,7 +234,36 @@ main:
 \rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
 
+\section*{\unit\_070 -- RIP Relative Addressing}
+\begin{samepage}
+    \question What are two things that RIP Relative addressing accomplishes?
+    \vspace{5mm}
+\end{samepage}
+\par
 
+\begin{samepage}
+    \question What is the difference between PIC and PIE?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the following code, change the line or lines that need to be modified for PIC.  
+    \begin{verbatim}
+    .data
+        ages: .quad 10, 23, 8, 9, 23
+        agesN .quad 5
+    .text
+    main:
+       movq ages, %r8
+       movq agesN, %r9
+       xorg %rax, %rax
+       movq $ages %rdi     
+    \end{verbatim}
+\end{samepage}
+\par
+ 
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
 
 
 

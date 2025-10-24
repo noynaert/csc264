@@ -34,9 +34,6 @@ A second important reason is that RIP Relative increases security.  If data alwa
 
 Two related concepts are PIC and PIE.  The "C" stands for coding.  The "E" stands for Executable.  Human programmers do PIC.   When PIC code is assembled or compiled it becomes PIE.
 
-nstruction at 0x400080 needs to access a global variable g located at 0x401000.
-* Non-PIE: The instruction would be movq g, %rax, which disassembles to movq 0x401000, %rax. If the program is loaded at a different address, this instruction would point to the wrong location.
-* PIE using RIP-relative: The instruction would be movq g(%rip), %rax. The assembler calculates the offset between the instruction's address (0x400080) and the variable g (0x401000) and encodes that offset into the instruction. If the program is loaded at 0x404000, the offset remains the same and the instruction still accesses the correct address. 
 ## Advantages for PIC and PIE
 
 Position-independent code (PIC) and position-independent executables (PIE) are essential for modern computing security and memory management.
