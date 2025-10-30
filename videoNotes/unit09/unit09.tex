@@ -1,7 +1,6 @@
 %!TEX program = xelatex
 \documentclass[letterpaper,12pt]{exam}
 \usepackage{../videoNotes}
-\usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{soul}
 \usepackage{tabulary}
@@ -26,7 +25,7 @@
 \par{\fontfamily{qzc}\selectfont\textbf{}}
 \begin{questions}
 
-\section*{\unit\_010 -- LEA }
+\section*{\unit\_010 -- LEA (Part 1)}
 \begin{samepage}
     \question What does LEA stand for?
     \vspace{5mm}
@@ -44,13 +43,40 @@
 \begin{samepage}
     \question The following image is from the ddd debugger.  It shows the memory contents after lines 13 and 14 of the code were executed.  Why are the contents of r11 and r12 different?
    \begin{center}
-    \includegraphics{../../09_Stack/images/010_LeaVsMov.png}
+    \includegraphics[width=\textwidth]{../../09_Stack/images/010_LeaVsMov.png}
    % \includegraphics{../images/unit09_010_LeaVsMov.png}
    \end{center}
    \vspace{5mm}
 \end{samepage}
 \par
+ \section*{\unit\_010 -- LEA (Part 2)}
+ \par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+ \begin{samepage}
+     \question Explain why using the "\$" in the statement  \texttt{\textbf{movq \$size, \%r11}} reduces the need for the \texttt{\textbf{lea}} instruction.
+     \vspace{5mm}
+ \end{samepage}
+ \par
   
+ \begin{samepage}
+     \question In the GAS assember in 64-bit mode, which of the following statements is different than the others in their results?  Explain your answer.
+     \begin{itemize}
+             \item{texttt{movq size, \%r11}}
+            \item {texttt{movq \$size, \%r11}}
+            \item {texttt{leaq size, \%r11}}
+           \end{itemize}
+     \vspace{5mm}
+ \end{samepage}
+     \question In the GAS assember in 64-bit mode, which of the following statements is different than the others in their results?  Explain your answer.
+
+ \begin{itemize}
+             \item{texttt{movq size, \%r11}}
+            \item {texttt{movq \$size, \%r11}}
+            \item {texttt{movq size(\%rip), \%r11}}
+        \end{itemize}
+            \vspace{5mm}
+ \par
+ \rule{0.5\textwidth}{.4pt} %End of section
+ %---------------------------------- 
 %----------------------------------
 \end{questions} 
 %footer
