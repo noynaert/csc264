@@ -1,6 +1,7 @@
 {
   "baseFontSize": 25,
   "baseFontSizeAction": true,
-  "cssTheme": "Primary",
-  "theme": "obsidian"
+  "cssTheme": "Prism",
+  "theme": "moonstone",
+  "accentColor": "#5c82f5"
 }

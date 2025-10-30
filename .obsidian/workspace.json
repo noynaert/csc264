@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09_Stack/09.010_LEA.md",
+                "file": "09_Stack/09_010_LEA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09.010_LEA"
+              "title": "09_010_LEA"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332
+    "width": 332,
+    "collapsed": true
   },
   "right": {
     "id": "fd94b32ed11930e8",
@@ -171,6 +172,8 @@
   },
   "active": "c58bf9e4a2f0c7d1",
   "lastOpenFiles": [
+    "Untitled.base",
+    "09_Stack/09_010_LEA.md",
     "videoNotes/unit09/unit09.synctex.gz",
     "videoNotes/unit09/unit09.pdf",
     "videoNotes/unit09/unit09.out",
@@ -184,8 +187,6 @@
     "08_Memory_And_Addressing_2/08_050_Print_a_Byte_with_Indexing.md",
     "09_Stack/09.010_LEA.md",
     "08_Memory_And_Addressing_2/08_070_RIP_Relative.md",
-    "09_Stack",
-    "videoNotes/ex02Cheatsheet/cheatsheetExam02.synctex(busy)",
     "08_Memory_And_Addressing_2/08_055_looping_Characters.md",
     "08_Memory_And_Addressing_2/08_060_LoopingQuads.md",
     "08_Memory_And_Addressing_2/08_030_Addressing_Modes.md",
@@ -208,7 +209,6 @@
     "06_IO/images/noBss.png",
     "images.md",
     "06_IO/06_020_Write.md",
-    "06_IO/06_010_Syscall.md",
-    "06_IO/06_005_Syntax.md"
+    "06_IO/06_010_Syscall.md"
   ]
 }
