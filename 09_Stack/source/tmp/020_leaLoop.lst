@@ -1,0 +1,80 @@
+GAS LISTING 020_leaLoop.s 			page 1
+
+
+   1              	/* 
+   2              	   Illustrates LEA vs MOV
+   3              	*/
+   4              	.globl main
+   5              	.data
+   6 0000 10000000 	    numbers: .quad 16, 32, 48, 64, 80 , 96, 112 
+   6      00000000 
+   6      20000000 
+   6      00000000 
+   6      30000000 
+   7 0038 38000000 	    size: .quad .-numbers
+   7      00000000 
+   8 0040 456C656D 	    format: .asciz "Element [%d] is %d\n"
+   8      656E7420 
+   8      5B25645D 
+   8      20697320 
+   8      25640A00 
+   9 0054 00000000 	    tmp: .quad 0
+   9      00000000 
+  10              	
+  11              	.text
+  12              	main:
+  13              	    #r10 = temporary use
+  14              	    #r13 = current element
+  15              	    #r14 = base address of array
+  16              	    #r15 = end address of array
+  17              	    #rbx = sum so far
+  18              	    #rcx = index
+  19              	
+  20              	
+  21              	    # store the address of the array start into r14
+  22 0000 4C8D3500 	    leaq numbers(%rip), %r14
+  22      000000
+  23              	
+  24              	    # calculate the address of the end of the list.  This will control the loop
+  25 0007 4C8B1425 	    movq   size, %r10              # the value of size stored in r10
+  25      00000000 
+  26 000f 4E8D3C15 	    leaq   numbers(,%r10,1), %r15  # r15 holds the sum of the beginning of the array plus the size 
+  26      00000000 
+  27              	
+  28              	    # initialize loop variables
+  29 0017 4831DB   	    xorq   %rbx, %rbx              # sum = 0
+  30 001a 4831C9   	    xorq   %rcx, %rcx              # index = 0
+  31 001d 4D89F5   	    movq   %r14, %r13              # current element = base address of array
+  32              	
+  33              	
+  34              	    _printElement:
+  35              	    # printf call for element of the array
+  36 0020 4831C0   	    xor %rax, %rax
+  37 0023 48C7C700 	    movq $format, %rdi
+  37      000000
+  38 002a 4889CE   	    movq %rcx, %rsi
+  39 002d 498B5500 	    movq (%r13), %rdx
+  40 0031 51       	    pushq %rcx
+  41 0032 4157     	    pushq %r15
+  42              	    #movq %rcx, tmp
+  43 0034 E8000000 	    call printf
+GAS LISTING 020_leaLoop.s 			page 2
+
+
+  43      00
+  44 0039 415F     	    popq %r15
+  45 003b 59       	    popq %rcx
+  46              	    #movq tmp, %rcx
+  47              	
+  48              	    #increment index
+  49 003c 48FFC1   	    incq %rcx
+  50 003f 4D8D2CCE 	    leaq (%r14, %rcx, 8), %r13  #load next element using LEA addressing mode
+  51 0043 4D39FD   	    cmpq %r15, %r13
+  52 0046 7CD8     	    jl _printElement
+  53              	    _endprintElement:
+  54              	
+  55              	_exit:
+  56 0048 48C7C03C 	    movq $60, %rax
+  56      000000
+  57 004f 4831FF   	    xorq %rdi, %rdi
+  58 0052 0F05     	    syscall
