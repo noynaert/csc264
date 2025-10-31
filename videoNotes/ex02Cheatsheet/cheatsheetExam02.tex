@@ -37,7 +37,7 @@
 \begin{itemize}
     \item Parameters are stored in registers in the following order: rdi, rsi, rdx, rcx, r8, r9. (If there are more parameters, they are pushed onto the stack)
     \item Most C functions return an integer or a pointer (which is just an integer).  The return value is placed in the rax register
-    \item The called functions may use or destroy the content of the following registers: rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11 
+    \item The called functions may use or destroy the content of the following registers: rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11, r15 
     \item Other registers may be used, but the called function is responsible for saving them.
 \vspace{5 mm}
 
