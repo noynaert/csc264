@@ -50,7 +50,6 @@
 \end{samepage}
 \par
  \section*{\unit\_010 -- LEA (Part 2)}
- \par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
  \begin{samepage}
      \question Explain why using the "\$" in the statement  \texttt{\textbf{movq \$size, \%r11}} reduces the need for the \texttt{\textbf{lea}} instruction.
      \vspace{5mm}
@@ -77,7 +76,68 @@
  \par
  \rule{0.5\textwidth}{.4pt} %End of section
  %---------------------------------- 
+\section*{\unit\_030 -- Looping with Lea}
+\begin{samepage}
+    \question What are three ways to implement loops in assembly language?  State them briefly, don't just copy what is in the notes.
+    \begin{itemize}
+        \item 1.
+        \vspace{4mm}
+        \item 2.
+        \vspace{4mm}
+        \item 3.
+   \end{itemize}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question The following call to \texttt{\textbf{printf}} is a potential problem.  What problem could result if the value in the \texttt{\textbf{rcx}} register is needed later in the program?
+     How could the problem be avoided?
+    \begin{verbatim}
+    # printf call for element of the array
+    xor \%rax, \%rax
+    movq \$format, \%rdi
+    movq \%rcx, \%rsi
+    movq (\%r13), \%rdx
+    call printf
+\end{verbatim}
+
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+
+\rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
+
+\section*{\unit\_030 -- Stashing on the Stack}
+\begin{samepage}
+    \question What is the purpose of "stashing" registers on the stack?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How do you determine whether a certain register is vulnerable to being changed during a function call?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is one technique for keeping the stack aligned to 16 byte boundaries?
+    \vspace{5mm}
+\end{samepage}
+\par
+  
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_040 -- Program Cleanup}
+Note:  There are no video notes for this section.  It just cleans up a detail in the program.
+
+\begin{samepage}
+    \question Does the rbx register need to be preserved before the function call?  Explain your answer.
+    \vspace{5mm}
+\end{samepage}
+\par
+
+ %----------------------------------
 \end{questions} 
 %footer
 \begin{center}

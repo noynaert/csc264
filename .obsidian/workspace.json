@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09_Stack/09_010_LEA.md",
+                "file": "09_Stack/09_Stashing_on_the_Stack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09_010_LEA"
+              "title": "09_Stashing_on_the_Stack"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332,
-    "collapsed": true
+    "width": 332
   },
   "right": {
     "id": "fd94b32ed11930e8",
@@ -170,19 +169,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "c58bf9e4a2f0c7d1",
+  "active": "afb60122869a8740",
   "lastOpenFiles": [
-    "Untitled.base",
-    "09_Stack/09_010_LEA.md",
-    "videoNotes/unit09/unit09.synctex.gz",
-    "videoNotes/unit09/unit09.pdf",
+    "09_Stack/source/030_StashOnTheStack.exe",
+    "09_Stack/source/030_StashOnTheStack.lst",
+    "09_Stack/source/030_StashOnTheStack.s",
+    "videoNotes/unit09/unit09.synctex(busy)",
     "videoNotes/unit09/unit09.out",
     "videoNotes/unit09/unit09.aux",
-    "videoNotes/unit09/unit09.synctex(busy)",
-    "videoNotes/unit09/unit09.log",
-    "videoNotes/unit09/unit09.tex",
-    "videoNotes/unit09/unit08.tex",
-    "videoNotes/unit09",
+    "09_Stack/09_020_Lea_for_addressing.md",
+    "09_Stack/09_Stashing_on_the_Stack.md",
+    "09_Stack/source/a.out",
+    "09_Stack/source/020_leaLoop.exe",
+    "09_Stack/09_010_LEA.md",
+    "Untitled.base",
+    "videoNotes/unit09/unit09.synctex.gz",
+    "videoNotes/unit09/unit09.pdf",
     "08_Memory_And_Addressing_2/08_040_Memory_Adderessing_Modes.md",
     "08_Memory_And_Addressing_2/08_050_Print_a_Byte_with_Indexing.md",
     "09_Stack/09.010_LEA.md",
@@ -207,8 +209,6 @@
     "06_IO/06_050_ReadFixedLength.md",
     "06_IO/06_040_Syntax_for_Input.md",
     "06_IO/images/noBss.png",
-    "images.md",
-    "06_IO/06_020_Write.md",
-    "06_IO/06_010_Syscall.md"
+    "images.md"
   ]
 }

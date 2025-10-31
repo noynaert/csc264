@@ -1,0 +1,101 @@
+GAS LISTING 030_StashOnTheStack.s 			page 1
+
+
+   1              	/* 
+   2              	   Loop using LEA and stack
+   3              	*/
+   4              	.globl main
+   5              	.data
+   6 0000 10000000 	    numbers: .quad 16, 32, 48, 64, 80 , 96, 112 
+   6      00000000 
+   6      20000000 
+   6      00000000 
+   6      30000000 
+   7 0038 38000000 	    size: .quad .-numbers
+   7      00000000 
+   8 0040 456C656D 	    format: .asciz "Element [%d] is %d. The subtotal is %d\n"
+   8      656E7420 
+   8      5B25645D 
+   8      20697320 
+   8      25642E20 
+   9 0068 0A546865 	    formatResult: .asciz "\nThe total is %d.\n"
+   9      20746F74 
+   9      616C2069 
+   9      73202564 
+   9      2E0A00
+  10              	
+  11              	
+  12              	.text
+  13              	main:
+  14              	    #rbx = sum so far
+  15              	    #rcx = index
+  16              	    #r10 = holds the value of the size
+  17              	    #r13 = current element
+  18              	    #r14 = base address of array
+  19              	    #r15 = end address of array
+  20              	
+  21              	    ###  Setup for the loop
+  22              	
+  23              	    #Store the base address of the array in r14
+  24 0000 4C8D3500 	    leaq numbers(%rip), %r14
+  24      000000
+  25              	
+  26              	    #Store the end address of the array in r15
+  27 0007 4C8B1425 	    movq  size,%r10   #Move the of bytes in the array into r15
+  27      00000000 
+  28 000f 4E8D3C15 	    leaq  numbers(,%r10,1), %r15  #calculates the end of the array by adding size plus the base add
+  28      00000000 
+  29              	
+  30              	    ## initialize the loop control variables
+  31 0017 4831DB   	    xor %rbx, %rbx     # zero out the rbx
+  32 001a 4831C9   	    xor %rcx, %rcx     # zero out the rcx
+  33 001d 4D89F5   	    movq %r14, %r13    # set r13, the address of the number to be added
+  34              	                       #          is initially set to the base of the array.
+  35              	
+  36              	
+  37              	    ## loop through elements of the array, printing as we go
+  38              	    ## Assumes there is one element to print
+  39              	
+  40              	    _printElement:
+  41              	
+GAS LISTING 030_StashOnTheStack.s 			page 2
+
+
+  42              	    # add the current number (pointed to by r13) to the running total in rbx
+  43 0020 49035D00 	    add  (%r13), %rbx
+  44              	
+  45              	    # printf call for element of the array
+  46 0024 4831C0   	    xor %rax, %rax
+  47 0027 48C7C700 	    movq $format, %rdi
+  47      000000
+  48 002e 4889CE   	    movq %rcx, %rsi
+  49 0031 498B5500 	    movq (%r13), %rdx
+  50 0035 51       	    push %rcx        #save the rcx register before the call
+  51 0036 4157     	    push %r15        #save the r15 register before the call
+  52 0038 4889D9   	    movq %rbx, %rcx  #move the subtotal in the rbx to the 4th argument
+  53 003b E8000000 	    call printf
+  53      00
+  54 0040 415F     	    pop  %r15        #restore r15 after the call
+  55 0042 59       	    pop  %rcx        #restore rcx after the call
+  56              	    #Set up for test and next iteration
+  57 0043 48FFC1   	    incq %rcx
+  58 0046 4D8D2CCE 	    leaq (%r14, %rcx, 8), %r13 #load the next element into r13
+  59              	
+  60              	    #test for end of loop
+  61 004a 4D39FD   	    cmpq %r15, %r13
+  62 004d 7CD1     	    jl  _printElement
+  63              	    _endPrintElement:
+  64              	
+  65              	    #print the final total
+  66 004f 4831C0   	    xor %rax, %rax
+  67 0052 48C7C700 	    movq $formatResult, %rdi
+  67      000000
+  68 0059 4889DE   	    movq %rbx, %rsi
+  69 005c E8000000 	    call printf
+  69      00
+  70              	
+  71              	_exit:
+  72 0061 48C7C03C 	    movq $60, %rax
+  72      000000
+  73 0068 4831FF   	    xorq %rdi, %rdi
+  74 006b 0F05     	    syscall
