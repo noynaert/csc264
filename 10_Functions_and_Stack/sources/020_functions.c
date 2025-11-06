@@ -27,6 +27,7 @@ int functionB(int q){
     printf("In functionB: q = %d\n", q);
     return q;  // Just a dummy return value
 }
+
  long functionC(long n) {
     printf("In functionC with n = %d\n", n);
     if (n < 1) {
