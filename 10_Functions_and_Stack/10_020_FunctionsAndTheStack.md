@@ -1,8 +1,10 @@
 # 10.020 Functions and the Stack
 
-When a function is called, a new stack frame is created on the call stack.  This stack frame contains all the local variables and parameters for that function.
+When a function is called, a new stack frame is created on the call stack.  This stack frame contains all the local variables and parameters for that function.  The working memory of the function is on the stack.  
 
 When the function completes, its stack frame is popped off the call stack, and control returns to the point where the function was called.
+
+The current method or function is always on the top of the stack, and inactive processes are "buried" in the stack until the current method "pops" off the stack.  The stack automatically keeps track of the status of each function or method.
 
 Consider the following code:
 
