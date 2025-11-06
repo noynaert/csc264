@@ -1,4 +1,4 @@
-# Stack Frames
+# Stack Frames and Stack Structure in x86-64
 
 ![Stack](images/x86_64_stackWithNote.png)
 
@@ -16,7 +16,9 @@ Here's a breakdown of its structure and operation:
 - RSP (Stack Pointer): Points to the current top of the stack (the lowest memory address currently in use by the stack).
 - RBP (Base Pointer): Often used as a stable reference point to the beginning of the current stack frame, allowing easy access to local variables and arguments via offsets.
 
-## Stack Alignment: The x86-64 System V ABI (Application Binary Interface) mandates that the stack pointer (RSP) must be 16-byte aligned before a call instruction. This ensures optimal performance for certain instructions.
+## Stack Alignment
+
+ The x86-64 System V ABI (Application Binary Interface) mandates that the stack pointer (RSP) must be 16-byte aligned before a call instruction. This ensures optimal performance for certain instructions.
 ## Push and Pop Operations:
  - PUSH: Decrements RSP by 8 bytes (for 64-bit values) and then stores the value at the new RSP address.
  - POP: Retrieves the value from the memory address pointed to by RSP, and then increments RSP by 8 bytes.
