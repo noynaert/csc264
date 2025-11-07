@@ -1,0 +1,153 @@
+%!TEX program = xelatex
+\documentclass[letterpaper,12pt]{exam}
+\usepackage{../videoNotes}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{soul}
+\usepackage{tabulary}
+\usepackage{fontspec}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor{red!20}
+
+\newcommand{\unit}{Unit 10}
+\pagestyle{headandfoot}
+\firstpageheader{CSC 264 \semester\ \  \unit}{}{Name: $\rule{6cm}{0.15mm}$}
+\runningheader{CSC 264 \semester}{\unit}{Page \thepage\ of \numpages}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+\begin{document}
+
+%\underconstruction
+
+\par{\fontfamily{qzc}\selectfont\textbf{}}
+\begin{questions}
+
+\section*{\unit\_010 -- About Stacks}
+\begin{samepage}
+    \question What is a stack?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What are the two main operations that may be performed on a stack?
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    \question What does LIFO mean?  (I forgot to use the term in the video, but it is in the notes.  Look it up in the notes or do a web search.)  Explain in paragraph form what LIFO means.
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question Stacks have a top.  Doe they have a bottom?  Explain your answer.
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  \begin{samepage}
+      \question Can stacks logically grow downward?
+      \vspace{5mm}
+  \end{samepage}
+  \par
+   \begin{samepage}
+       \question What is "RPN arithmetic?"  Why does almost every discussion of stacks include at least a mention of RPN logic?
+       \vspace{5mm}
+   \end{samepage}
+   \par
+    
+
+
+\section*{\unit\_020 -- Functions and the Stack}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question How are function calls in high level languages similar to function calls in assembly language from the perspective of the operating system? 
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How are function calls in high level languages different than function calls in assembly language from the perspective of the programmer?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the stack frame? (Give a general description, not just list of the information included in the stack frame.) 
+    \vspace{10mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What information is stored in the stack frame?
+    \vspace{16mm}
+\end{samepage}
+
+\begin{samepage}
+    \question In the video, I recorded the value of the rsp in each function.  What is the rsp register, and why was I focused on just that register?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the video, I was writing the values of the rsp in the text editor.  To what extent was I simulating the stack when I did this?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the video, I mentioned that the stack grows down in memory.  Did using the editor reflect the "downward" growth of the stack?  ?
+    \vspace{5mm}
+\end{samepage}
+\question In the video, did each new value of the rsp get larger or smaller than its previous value?
+    \vspace{5mm}
+ \begin{samepage}
+     \question In homework 9, I cautioned you to make sure that you always pushed an even number of quads onto the stack.  Based on what you know now, why did I give this advice?
+     \vspace{5mm}
+ \end{samepage}
+   
+\par
+%----------------------------------
+\section*{\unit\_030 -- Stack Frames}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question What is the relationship between a function and the stack frame?
+    \vspace{5mm}
+\end{samepage}
+\begin{samepage}
+    What is the first item pushed onto the stack when a function is called?
+\par
+\end{samepage}
+\begin{samepage}
+    \question What is the "Red Zone" of the stack frame?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question What is the RBP register?  How is it related to the stack and functions?
+     \vspace{15mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What does ABI stand for?  Explain why it is important to the assembly language programmer.
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What does the ABI say about the alignment of the RSP when the function is called.
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question When I ran kdbg, what digit did all the RPB values end with.  Why was this significant?  Would I have gotten the same result if I had had been displaying the address in decimal (explain)?
+     \vspace{5mm}
+ \end{samepage}
+ 
+
+
+ %----------------------------------
+\end{questions} 
+%footer
+
+
+%If you have any lingering questions or problems, please write them here or see me.
+%\vfill
+%\begin{center}
+%\includegraphics{../csc264Logo}
+%\end{center}
+\end{document} 

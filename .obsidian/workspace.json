@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Functions_and_Stack/10_020_FunctionsAndTheStack.md",
+                "file": "10_Functions_and_Stack/10_030_StackFramesAndStructure.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10_020_FunctionsAndTheStack"
+              "title": "10_030_StackFramesAndStructure"
             }
           }
         ]
@@ -172,28 +172,27 @@
   },
   "active": "b9c3ec1c4134cd11",
   "lastOpenFiles": [
-    "10_Functions_and_Stack/sources/020_functions.c~",
-    "10_Functions_and_Stack/sources/a.out",
     "10_Functions_and_Stack/10_010_AboutStacks.md",
+    "videoNotes/unit10/unit09.synctex(busy)",
     "10_Functions_and_Stack/10_020_FunctionsAndTheStack.md",
-    "10_Functions_and_Stack/sources/020_functions.c",
+    "videoNotes/unit10/unit09.out",
+    "videoNotes/unit10/unit09.aux",
+    "videoNotes/unit10/unit09.synctex.gz",
+    "videoNotes/unit10/unit09.log",
+    "videoNotes/unit10/unit09.tex",
+    "videoNotes/unit10/unit09.pdf",
+    "videoNotes/unit10",
+    "videoNotes/unit09 copy/unit09.tex",
+    "videoNotes/unit09 copy/unit09.pdf",
     "10_Functions_and_Stack/10_010_About_Stacks.md",
     "10_Functions_and_Stack/10_020_About_Stacks.md",
-    "10_Functions_and_Stack/sources/010_functions.c",
-    "10_Functions_and_Stack/sources/ComplicatedFunctions.c",
-    "10_Functions_and_Stack/sources/Functions.c",
     "10_Functions_and_Stack/030_stackFrames.md",
     "10_Functions_and_Stack/10_030_StackFrames.md",
-    "10_Functions_and_Stack/sources/010_Functions.c",
     "10_Functions_and_Stack/sources/010_Functions.md",
     "10_Functions_and_Stack/images/x86_64_stackWithNote.png",
-    "10_Functions_and_Stack/images/x86_64_stack.png-autosave.kra",
     "images 1.md",
     "10_Functions_and_Stack/images/x86_64_stack.png",
     "images.md",
-    "10_Functions_and_Stack/images",
-    "10_Functions_and_Stack/Untitled Folder",
-    "10_Functions_and_Stack/sources",
     "09_Stack/09_020_Lea_for_addressing.md",
     "09_Stack/09_Stashing_on_the_Stack.md",
     "09_Stack/09_010_LEA.md",

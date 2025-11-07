@@ -1,5 +1,4 @@
 # Stack Frames and Stack Structure in x86-64
-
 ![Stack](images/x86_64_stackWithNote.png)
 
 The x86-64 stack is a region of memory used for temporary data storage, particularly during function calls. It follows a Last-In, First-Out (LIFO) principle and is managed by the RSP (Stack Pointer) and RBP (Base Pointer) registers.

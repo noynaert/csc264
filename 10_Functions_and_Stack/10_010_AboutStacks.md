@@ -33,7 +33,7 @@ RPN (Reverse Polish Notation) is a mathematical notation in which every operator
 | ----------------- | -------------- |
 | 3 + 4             | 3 4 +          |
 | 3 + (4 * 5)       | 3 4 5 * +      |
-| (5 - 2) * 6       | 5 2 - 6 *      |
+| (3+4)*5           | 3 4 + 5 *      |
 | 8 / (4 + 4)       | 8 4 4 + /      |
 | (7 + 3) * (2 - 4) | 7 3 + 2 4 - *  |
 
