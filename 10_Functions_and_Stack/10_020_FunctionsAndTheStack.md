@@ -1,6 +1,18 @@
 # 10.020 Functions and the Stack
 
-When a function is called, a new stack frame is created on the call stack.  This stack frame contains all the local variables and parameters for that function.  The working memory of the function is on the stack.  
+Note:  In this video I will talk about functions, but the same things apply to methods as well.
+
+Functions in high level languages and assembly language use the same mechanisms.  However, in high level languages, the stack mechanics are abstracted away.
+
+When a function is called, a new ***stack frame*** is created on the call stack. Each function has one stack frame.  
+
+This stack frame contains:
+
+- The address to return to
+- All parameters for the function
+- All local variables for the function
+- The return value of the function
+- The registers the function is using behind the scenes
 
 When the function completes, its stack frame is popped off the call stack, and control returns to the point where the function was called.
 
@@ -110,6 +122,7 @@ In functionC with n = 0
 Calling functionB for no reason from inside recursiveFactorial
 result of C from B: 1
 Back in main function
+```
 
 
 

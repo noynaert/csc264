@@ -19,8 +19,8 @@ void functionA(int a, int b) {
     int sum = a+b;  // local variable goes on the stack
     printf("In functionA: a=%d, b=%d sum=%d\n", a, b, sum);
     functionB(sum);
-        long result = functionC(5);
-        printf("result of C from B: %d\n", result);
+    long result = functionC(5);
+    printf("result of C from B: %d\n", result);
 }
 
 int functionB(int q){
@@ -35,8 +35,8 @@ int functionB(int q){
         return 1;
     } else {
         functionB(n);  // Just to demonstrate stack behavior
-        //main(); // Would cause stack overflow
-        functionA(1, 2); //Would also cause stack overflow
+        //functionA(1,1);  // Would cause infinite recursion and stack overflow.
+        //main();  // Would also cause infinite recursion and stack overflow.
         return functionC(n - 1);
     }
 
