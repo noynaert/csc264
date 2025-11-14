@@ -1,0 +1,85 @@
+%!TEX program = xelatex
+\documentclass[letterpaper,12pt]{exam}
+\usepackage{../videoNotes}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{soul}
+%\usepackage{draftwatermark}
+\usepackage{multicol}
+\usepackage[margin=5mm]{geometry}
+\usepackage{fontspec}
+\usepackage{tabulary}
+\setmainfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{1.5}
+%\SetWatermarkColor{red!20}
+\newcommand{\unit}{Exam 3 Cheatsheet \textcolor{red}{DRAFT}}
+\pagestyle{headandfoot}
+\begin{document}
+\section*{\unit}
+\section*{Syscall}
+\begin{tabular}{| c | c | c | c| c |}
+ \hline
+    rax & System Call & rdi & rsi & rdx \\
+    \hline
+    $0$ & read & file descriptor & buffer & number of bytes \\
+    \hline
+    $1$ & write & file descriptor & buffer & number of bytes \\
+    \hline
+    $60$ & exit & exit code & --- & --- \\
+    \hline
+\end{tabular}
+\par
+\section*{Calling C library functions}
+
+\begin{itemize}
+    \item Parameters are stored in registers in the following order: rdi, rsi, rdx, rcx, r8, r9. (If there are more parameters, they are pushed onto the stack)
+    \item Most C functions return an integer or a pointer (which is just an integer).  The return value is placed in the rax register
+    \item The called functions may use or destroy the content of the following registers: rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11, r15 
+    \item Other registers may be used, but the called function is responsible for saving them.
+\vspace{5 mm}
+
+\end{itemize}
+\par
+
+\begin{center}
+\begin{tabulary}{\textwidth}{C C C C C C C C}
+\multicolumn{7}{c}{{\huge General Purpose Registers}}\\
+
+64-bit & 32-bit & 16-bit & 8-bit low & 8-bit high & Calling Convention & "Owned" by caller & "Owned" by callee \\
+\hline
+rax & eax & ax & al & ah & Return Val/Accum &  & Yes \\
+rbx & ebx & bx & bl & bh & --- & Yes & \\
+rcx & ecx & cx & cl & ch & 4th argument &  & Yes \\
+rdx & edx & dx & dl & dh & 3rd argument &   & Yes \\
+\hline
+rsi & esi & si & sil & -- & 2nd argument &  & Yes \\
+rdi & edi & di & dil & -- & 1st argument &  & Yes \\
+\hline
+r8 & r8d & r8w & r8b & -- & 5th argument &  & Yes \\
+r9 & r9d & r9w & r9b & -- & --- &  & Yes \\
+r10 & r10d & r10w & r10b & -- & --- &  & Yes \\
+r11 & r11d & r11w & r11b & -- & --- &  & Yes \\
+r12 & r12d & r12w & r12b & -- & --- & Yes  &  \\
+r13 & r13d & r13w & r14b & -- & --- & Yes  &  \\
+r14 & r14d & r14w & r14b & -- & --- & Yes  &  \\
+r15 & r15d & r15w & r15b & -- & --- & Yes &  \\
+\end{tabulary}
+\par 
+\vspace{10 mm}
+\begin{tabulary}{\textwidth}{L C C C C C C}
+\multicolumn{6}{c}{{\huge Special Purpose Registers}}\\
+Register & 64-bit & 32-bit & 16-bit & 8-bit low & "Owned" by caller & "Owned" by callee\\
+\hline
+\textbf{Stack Pointer} & rsp & esp & sp & spl &  & Yes \\
+\textbf{Base Pointer} & rbp & ebp & bp & bpl & Yes  &  \\
+\textbf{Instruction Pointer} & rip & eip & ip & -- &   & Yes  \\
+\textbf{Flags and Conditions} & rflags & eflags & flags & -- &   & Yes\\
+\end{tabulary}
+\end{center}
+
+
+
+\end{document} 
