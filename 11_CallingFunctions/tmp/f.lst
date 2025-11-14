@@ -1,0 +1,19 @@
+GAS LISTING f.s 			page 1
+
+
+   1              	/* Messing with functions calls */
+   2              	
+   3              	.section .text
+   4              	.globl main
+   5              	
+   6              	
+   7              	main:
+   8 0000 48C7C02A 	    movq $42, %rax
+   8      000000
+   9 0007 4883EC08 	    sub $8, %rsp      # make space on stack
+  10 000b 48C7C762 	    movq $98, %rdi
+  10      000000
+  11 0012 E8000000 	    call quit
+  11      00
+ld: warning: cannot find entry symbol _start; defaulting to 0000000000400120
+ld: f.o:f.s:11:(.text+0x13): undefined reference to `quit'

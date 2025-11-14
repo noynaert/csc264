@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Functions_and_Stack/10_030_StackFramesAndStructure.md",
+                "file": "11_CallingFunctions/11_010 Review_of_What_We_Know_About_Functions_so_Far.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10_030_StackFramesAndStructure"
+              "title": "11_010 Review_of_What_We_Know_About_Functions_so_Far"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332,
-    "collapsed": true
+    "width": 332
   },
   "right": {
     "id": "fd94b32ed11930e8",
@@ -172,18 +171,23 @@
   },
   "active": "b9c3ec1c4134cd11",
   "lastOpenFiles": [
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.synctex(busy)",
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.out",
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.aux",
+    "11_CallingFunctions/tmp/registerOwnership.txt",
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.synctex.gz",
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.pdf",
+    "videoNotes/ex03Cheatsheet/cheatsheetExam03.log",
+    "11_CallingFunctions/tmp/f.lst",
+    "11_CallingFunctions/tmp/a.out",
+    "11_CallingFunctions/tmp/f.exe",
+    "11_CallingFunctions/tmp/f.o",
+    "11_CallingFunctions/tmp/callWithAlign.md",
+    "10_Functions_and_Stack/images/x86_64_stack.png",
+    "07_Memory_And_Addressing/07_040_printf.md",
+    "10_Functions_and_Stack/10_030_StackFramesAndStructure.md",
     "10_Functions_and_Stack/10_010_AboutStacks.md",
-    "videoNotes/unit10/unit09.synctex(busy)",
     "10_Functions_and_Stack/10_020_FunctionsAndTheStack.md",
-    "videoNotes/unit10/unit09.out",
-    "videoNotes/unit10/unit09.aux",
-    "videoNotes/unit10/unit09.synctex.gz",
-    "videoNotes/unit10/unit09.log",
-    "videoNotes/unit10/unit09.tex",
-    "videoNotes/unit10/unit09.pdf",
-    "videoNotes/unit10",
-    "videoNotes/unit09 copy/unit09.tex",
-    "videoNotes/unit09 copy/unit09.pdf",
     "10_Functions_and_Stack/10_010_About_Stacks.md",
     "10_Functions_and_Stack/10_020_About_Stacks.md",
     "10_Functions_and_Stack/030_stackFrames.md",
@@ -191,7 +195,6 @@
     "10_Functions_and_Stack/sources/010_Functions.md",
     "10_Functions_and_Stack/images/x86_64_stackWithNote.png",
     "images 1.md",
-    "10_Functions_and_Stack/images/x86_64_stack.png",
     "images.md",
     "09_Stack/09_020_Lea_for_addressing.md",
     "09_Stack/09_Stashing_on_the_Stack.md",
@@ -208,9 +211,6 @@
     "08_Memory_And_Addressing_2/images/movq.png",
     "08_Memory_And_Addressing_2/images/movb.png",
     "07_Memory_And_Addressing/hmwk07.md",
-    "00_Getting_Started/00_070_x86_Assembler.md",
-    "07_Memory_And_Addressing/07_040_printf.md",
-    "00_Getting_Started/sourceCode/README.md",
     "06_IO/images/noBss.png"
   ]
 }
