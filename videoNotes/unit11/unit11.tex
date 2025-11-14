@@ -6,10 +6,10 @@
 \usepackage{tabulary}
 \usepackage{fontspec}
 
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft}
-\SetWatermarkScale{1.5}
-\SetWatermarkColor{red!20}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft}
+%\SetWatermarkScale{1.5}
+%\SetWatermarkColor{red!20}
 
 \newcommand{\unit}{Unit 11}
 \pagestyle{headandfoot}
@@ -32,7 +32,6 @@
 \end{samepage}
 \par
 \section*{\unit\_020 -- Recap }
-\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
 \begin{samepage}
     \question Is main: going to be a caller or a callee function?
     \vspace{5mm}
@@ -80,8 +79,76 @@
    \par
     
 \rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------\section*{\unit\_- -- }
+\section*{\unit\_030 -- Stack Recap}
+\begin{samepage}
+    \question What two register
+    \vspace{5mm}
+\end{samepage}
+\par
+\rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
- %----------------------------------
+
+\begin{samepage}
+    \question What is the purpose of the rsp and the rbp registers?  If we already have the \%rsp register, why do we need the \%rbp register?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Why does subtracting from the \%rsp make the stack get larger?
+    \vspace{15mm}
+\end{samepage}
+\par
+ 
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_040 -- Stack Alignment}
+\begin{samepage}
+    \question What boundary must the stack be aligned to before a function call?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Should the caller or the callee align the stack?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question The caller is responsible for aligning the stack.  Let's assume that the programmer writing the caller function does reliably align the stack.  Does that mean that the callee can assume the stack is aligned when the function starts?  Explain. 
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What is a leaf function?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+   \begin{samepage}
+       \question What are three methods of aligning the stack?
+\begin{itemize}
+           \item Method 1: \vspace{5mm}
+           \item Method 2: \vspace{5mm}
+           \item Method 3: \vspace{5mm}
+\end{itemize}
+   \end{samepage}
+   \par
+    
+\begin{samepage}
+    \question How can the debugger let you confirm that the stack is aligned?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+%---------------------------------- 
+\section*{\unit\_050 -- Real Function}
+\begin{samepage}
+    \question Earlier in the semester we wrote a function that converted a string into a number.  Write a function that takes a string and returns the equivalent value in the \%rax.  You may either pass a null-terminated string, or you may pass a string and an integer representing length.
+    \vspace{5mm}
+\end{samepage}
+\par
+\hfill
+%----------------------------------
+%----------------------------------
 \end{questions} 
 %footer
 

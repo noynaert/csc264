@@ -1,11 +1,10 @@
-# 11.030 Deeper Dive into the Stack
+# 11.030 Recap of Stack Information
 
 # Two stack registers: %rsp and %rbp
 The stack in x86-64 architecture is managed using two primary registers: the Stack Pointer (%rsp) and the Base Pointer (%rbp).
 
 - **Stack Pointer (%rsp)**: This register points to the top of the stack. It is automatically adjusted (decremented or incremented) when data is pushed onto or popped off the stack. The stack grows downwards in memory, meaning that pushing data onto the stack decreases the value of %rsp, while popping data off the stack increases it.
 - **Base Pointer (%rbp)**: This register is used to reference local variables and parameters within a function's stack frame. It is typically set to the value of %rsp at the beginning of a function and remains fixed throughout the function's execution, providing a stable reference point for accessing local data.
-
 # Stack Frames
 When a function is called, a new stack frame is created on the stack. This stack frame contains:
 - The return address (the address to return to after the function call).
