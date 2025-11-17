@@ -18,17 +18,17 @@
 # Function to exit with return code 0
 quit0:              #
 _exit:              #local only label
-    movq $60, %rax
-    movq $0 , %rdi
-    syscall
+movq $60, %rax
+movq $0 , %rdi
+syscall
 
 # Function to return 1, indicating an error of unspecified origin
 quit1:
-    movq $60, %rax
-    movq $1,  %rdi
-    syscall
+movq $60, %rax
+movq $1,  %rdi
+syscall
 
 # Function to return the value in the %rdi register
 quitCustom:
-   movq $60, %rax
-   syscall
+movq $60, %rax
+syscall
