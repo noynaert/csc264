@@ -1,40 +1,43 @@
 /*
- *    getString.s
- *    Reads a string from standard input.
- *    The string reads until a non-digit character is encountered or the maximum length is reached.
+ * file: getInteger.s
  *
- *    Inputs:
- *       none
+ * Reads an integer from the user and returns it in the %ax register.
  *
- *    Outputs:
- *      %rax -
+ * Assemble with gcc.
  *
- *    Clobbers:
- *      %rdi, %rsi, %rdx, %rcx, %rax, %r8
- *      r8 is used as the local representation of the buffer pointer.
- *      The other registers are clobbered as a result of function calls.  They follow fairly normal usage
+ * GetInteger mainly calls two functions.  First, it calls getString to read a string from the user.
+ * Then, it calls stringToInteger to convert that string to an integer.
  *
- *     Logic:
- *     This getInteger function calls two other functions:
- *        getString--Prompts the user and then gets a string from the user.  The string will include only digits
- *        stringToInt--Converts the string to an integer
+ * Inputs:
+ *   None
+ * Outputs:
+ *   %ax - 16-bit integer read from user
+ *
+ * Clobbers:
+ *   %rax, %rcx, %rdx, %rdi, %rsi, %r8
+ *   (All registers clobbered by getString and stringToInteger)
+ *
  */
 .globl getInteger
 
 .data
-      # buffer: .skip 6
-      buffer: .asciz  "32007"
-      maxLength: .quad 5   # room for 5 digits
+    #buffer: .skip 7   #to hold the string
+    buffer: .asciz "abc\0\0\0"
+    maxLen: .quad 6
 .text
+
 getInteger:
     nop
-    sub $8, %rsp     #align the stack
+    subq $8, %rsp               # Align stack to 16-byte boundary
+    
+    # Get string from user
+    leaq buffer, %rdi
+    movq maxLen, %rsi
+    call getString
 
-    #call getString
-    # movq $buffer, %rdi
-    leaq   buffer, %rdi    #stringToInteger expects the address of the buffer in rdi
+    # Convert string to integer
+    movq $buffer, %rdi          # Pointer to string
     call stringToInteger
-
-
-   add $8, %rsp     #restore the stack
-   ret
+    
+    addq $8, %rsp               # Restore stack alignment
+    ret
