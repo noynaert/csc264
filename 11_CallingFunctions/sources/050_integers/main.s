@@ -14,9 +14,9 @@
 
 .globl main
 .data
-  first:  .quad  0   # holds the first operand to be added
-  second: .quad  0   # holds the second operand to be added
-  sum:    .quad  0   # holds the sum of the two integers
+  first:  .word  0   # holds the first operand to be added
+  second: .word  0   # holds the second operand to be added
+  sum:    .long  0   # holds the sum of the two integers
   operandFormat: .asciz "The operand is %d\n" # For debugging to confirm the integers were read correctly
   sumFormat: .asciz "The sum of %d and %d is %d\n" # Report the final results
 
@@ -27,16 +27,26 @@ main:
      # call getInteger function.  It will return an integer in %rax.  Save %rax to first
      # print first just to make sure it is working
      call getInteger
+     movw %ax, first
 
      #report the integer for debugging
      movq $operandFormat, %rdi
      xor %rsi, %rsi
-     movw %ax, %si
+     movw first, %si
      xorq %rax, %rax
      call printf
 
 
-     # call getInteger function.  It will return an integer in %rax.  Save %rax to second.
+      call getInteger # It will return an integer in %rax.  Save %rax to second.
+      movw %ax, second
+ #report the integer for debugging
+     movq $operandFormat, %rdi
+     xor %rsi, %rsi
+     movw second, %si
+     xorq %rax, %rax
+     call printf
+
+
      # printsecond just to make sure it is working
 
      # sum the two integers.  Save %rax to sum
@@ -48,4 +58,3 @@ main:
      # After completion,change to quit0.
      movb %al, %dil
      call quitCustom
-

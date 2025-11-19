@@ -23,7 +23,7 @@
 
 .data
       # buffer: .skip 6
-      buffer: .asciz  "67000"
+      buffer: .asciz  "32007"
       maxLength: .quad 5   # room for 5 digits
 .text
 getInteger:
