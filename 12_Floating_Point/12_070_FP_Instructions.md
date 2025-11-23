@@ -32,12 +32,16 @@ These operate on the low lane only
 
 Use the normal src, dest syntax
 
-- The src may be an XMM register or a memory address
-- The dest must be an XMM register
-- The constens of the src are added/subtracted from the dest, and the dest is replaced.
+- The src may be an XXM register or a memory address
+- The dest must be an XXM register
+- The constents of the src are added/subtracted from the dest, and the dest is replaced.
 - Upper lanes remain unchanged
 
 ## `mulsd` and `subsd`
+
+Multiplication and division work just like addition and subtraction.  
+
+### Differences in multiplication operations between integers and floating point
 
 In integer arithmetic, the multiply and divide instructions used the RAX and RDX registers.  
 

@@ -41,8 +41,235 @@
     \vspace{5mm}
 \end{samepage}
 \par
-  
+\section*{\unit\_020 -- Decimal vs Binary Floating Point }
+\begin{samepage}
+    \question Do integers always translate exactly between Decimal and Binary?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Do fractions expressed as decimals always translate exactly between Decimal and Binary?  Are there some situations where they do correspond exactly?  Give an example of each.
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How do many financial calculations avoid the problem of amounts expressed in dollars not always corresponding in decimal and binary representations.
+    \vspace{5mm}
+\end{samepage}
+\par
+\rule{0.5\textwidth}{.4pt} %End of section
 %----------------------------------
+\section*{\unit\_030 -- IEEE 754 }
+\begin{samepage}
+    \question  What does the IEEE 754 standard relate to?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How would 1234 be represented in scientific notation?  How would 0.00001234 be represented in scientific notation?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question In scientific notation, how many significant digits are to the left of the decimal?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+\begin{samepage}
+    \question In IEEE 754 notation, how many significant digits are to the left of the decimal?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What is the mantissa in a number such as $0.1234 \times 10^{-4}$
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the IEEE 754 standard, how many bits are used to represent the sign of the number in single precision?  How many bits are used to represent the sign in double precision?
+    \begin{verbatim}
+        single: _____     double: _____
+    \end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the IEEE 754 standard, how many bits are used to represent the exponent of the number in single precision?  How many bits are used to represent the exponent in double precision?
+    \begin{verbatim}
+        single: _____     double: _____
+    \end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question In the IEEE 754 standard, how many bits are used to represent the mantissa of the number in single precision?  How many bits are used to represent the mantissa in double precision?
+    \begin{verbatim}
+        single: _____     double: _____
+    \end{verbatim}
+    \vspace{5mm}
+\end{samepage}
+\par
+     
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_040 -- Generations}
+\begin{samepage}
+    \question Traditional CPUs could only do \texttt{\textbf{integer/floating point}}(circle one) math operations in hardware. \texttt{\textbf{Integer/Floating point}}(circle one) operations had to be done with software.  
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question Circle the operations that traditional CPUs could do before the introduction of the FPU.
+    \begin{itemize}
+        \item addition
+        \item subtraction
+        \item multiplication
+        \item division
+        \item bit manipulation (and, or, xor, etc)
+    \end{itemize}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question If CPUs could not do floating point arithmetic and complex math, how were math and floating point problems processed?
+    \vspace{5mm}
+\end{samepage}
+\par
+ 
+\begin{samepage}
+    \question What did the 8087 coprocessor do?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What was the name of the floating point operation that was introduced on the Pentium processors?
+    \vspace{5mm}
+\end{samepage}
+\par
+  
+
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_050 -- Precision}
+\par{\fontfamily{qzc}\selectfont\textbf{Video Length }}
+\begin{samepage}
+    \question What data type is used in Java and C for single precision floating point numbers? \rule{1cm}{0.15mm}  How many bits are used? \rule{1cm}{0.15mm}
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What data type is used in Java and C for double precision floating point numbers? \rule{1cm}{0.15mm}  How many bits are used? \rule{1cm}{0.15mm}
+    \vspace{5mm}
+\end{samepage}
+\par
+In Java, Python, and modern C, what is the default or most common data type used with floating point numbers?
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\section*{\unit\_060 -- Registers}
+\begin{samepage}
+    \question How wide are the floating point registers in SSE2?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question How many floating point registers are there in an x86-64 processor?
+    \vspace{5mm}
+\end{samepage}
+\par
+\begin{samepage}
+    \question What are the names of the floating point registers in an x86-64 processor
+    \vspace{5mm}
+\end{samepage}
+\par
+  
+\begin{samepage}
+    \question What are lanes?  How many lanes would be used if there are 4 32-bit numbers stored in the same register?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question What lane (or lanes) do scalar values use?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  \begin{samepage}
+      \question What is the purpose of packing multiple values into one register?
+      \vspace{5mm}
+  \end{samepage}
+  \par
+   
+\rule{0.5\textwidth}{.4pt} %End of section
+%----------------------------------
+\begin{samepage}
+    \question What is the command to do each of the following single precision operations?
+    \begin{itemize}
+        \item \rule{3cm}{0.5mm} move  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} add  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} subtract  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} multiply  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} divide  \vspace{5mm}
+
+    \end{itemize}
+    \vspace{5mm}
+\end{samepage}
+\par
+
+\begin{samepage}
+    \question What is the command to do each of the following double precision operations?
+    \begin{itemize}
+        \item \rule{3cm}{0.5mm} move  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} add  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} subtract  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} multiply  \vspace{5mm}
+        \item \rule{3cm}{0.5mm} divide  \vspace{5mm}
+
+    \end{itemize}
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question In what ways are multiplication and division with floating point different than multiplication and division using integers?  Which sounds easier?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+  
+ \section*{\unit\_080 -- printf}
+ \begin{samepage}
+     \question What is the format specifier for floating point numbers in decimal notation?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What is the format specifier that forces scientific notation?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question What is the format specifier that lets the printf command determine whether to use decimal or scientific notation?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+ \begin{samepage}
+     \question How is the format string passed to the printf function with floating point numbers?  How does it compare to passing integers?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+\begin{samepage}
+    \question If there are three floating point numbers passed to the printf, which registers would be used?
+    \vspace{5mm}
+\end{samepage}
+\par
+ \begin{samepage}
+     \question If there are three floating point values plus the format string, what number is placed in the EAX register before calling printf?
+     \vspace{5mm}
+ \end{samepage}
+ \par
+    
+
+ \rule{0.5\textwidth}{.4pt} %End of section
+ %----------------------------------
+
+
 \end{questions} 
 %footer
 

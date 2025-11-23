@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12_Floating_Point/12_020_Decimal_vs_Binary_FloatingPoint.md",
+                "file": "12_Floating_Point/12_080_printf.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12_020_Decimal_vs_Binary_FloatingPoint"
+              "title": "12_080_printf"
             }
           }
         ]
@@ -171,25 +171,26 @@
   },
   "active": "b9c3ec1c4134cd11",
   "lastOpenFiles": [
+    "videoNotes/unit12/unit12.synctex(busy)",
+    "12_Floating_Point/12_070_FP_Instructions.md",
+    "12_Floating_Point/12_080_printf.md",
+    "12_Floating_Point/12_060_SSE2_Registers.md",
+    "12_Floating_Point/12_050_Precisions.md",
+    "videoNotes/unit12/unit12.out",
+    "videoNotes/unit12/unit12.aux",
+    "12_Floating_Point/12_040_Generations.md",
+    "12_Floating_Point/images/8086_8087.jpg",
     "12_Floating_Point/12_030_ IEEE_754_Standard.md",
     "12_Floating_Point/12_020_Decimal_vs_Binary_FloatingPoint.md",
     "11_CallingFunctions/11_040_StackAlignment.md",
-    "videoNotes/unit12/unit12.synctex(busy)",
     "videoNotes/unit11/unit11.synctex(busy)",
     "videoNotes/unit12/unit12.synctex.gz",
     "videoNotes/unit12/unit12.pdf",
-    "videoNotes/unit12/unit12.out",
-    "videoNotes/unit12/unit12.aux",
     "videoNotes/unit12/unit12.log",
     "videoNotes/unit12/unit12.tex",
     "videoNotes/unit12",
     "12_Floating_Point/sources/080_printf/a.out",
-    "12_Floating_Point/12_080_printf.md",
-    "12_Floating_Point/12_070_FP_Instructions.md",
-    "12_Floating_Point/12_050_Precisions.md",
-    "12_Floating_Point/12_060_SSE2_Registers.md",
     "12_Floating_Point/12_050_SSE2_Registers.md",
-    "12_Floating_Point/12_040_Generations.md",
     "12_Floating_Point/12_030_Generations.md",
     "12_Floating_Point/12_020_Generations.md",
     "12_Floating_Point/12_010_An_Example.md",
