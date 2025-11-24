@@ -1,4 +1,4 @@
 {
   "svn.ignoreMissingSvnWarning": true,
-  "cSpell.words": ["Syscall"]
+  "cSpell.words": ["asciz", "Syscall"]
 }
